@@ -57,45 +57,8 @@ custom_groups = [
         "interval": 300
     },
     {
-        "name": "🇭🇰 香港自动选择（0.5倍率）",
+        "name": LOCAL_HK_PROXY,
         "type": "url-test",
         "proxies": hk05_nodes,
         "url": "http://www.gstatic.com/generate_204",
-        "interval": 300
-    }
-]
-
-# ---- 添加 Global Fallback ----
-custom_fallback = {
-    "name": "🇭🇰 香港流量优先Fallback",
-    "type": "fallback",
-    "proxies": hk05_nodes + [REMOTE_GLOBAL_PROXY],
-    "fallback-filter": {
-        "fail-count": 1,
-        "interval": 300
-    }
-}
-
-# ---- 合并 ----
-final = template.copy()
-final["proxies"] = nodes  # 所有节点
-final["proxy-groups"] = groups + custom_groups + [custom_fallback]
-
-# ---- 合并规则 ----
-template_rules = template.get("rules", [])
-merged_rules = template_rules.copy() + rules  # 本地规则在前，远程在后
-
-# 替换 RULE-SET,Global 为 fallback group
-for i, rule in enumerate(merged_rules):
-    if isinstance(rule, str) and rule.startswith("RULE-SET,Global"):
-        merged_rules[i] = f"RULE-SET,Global,{FALLBACK_GROUP_NAME}"
-
-final["rules"] = merged_rules
-
-# ---- 合并 rule-providers ----
-template_providers = template.get("rule-providers", {})
-final["rule-providers"] = {**rule_providers, **template_providers}  # 本地同名覆盖远程
-
-# ---- 输出 ----
-save_yaml(OUTPUT_FILE, final)
-print("Generated output.yaml successfully.")
+        "interva
