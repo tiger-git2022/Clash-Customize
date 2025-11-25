@@ -640,8 +640,7 @@ proxy-groups:
   proxies:
   - DIRECT
   type: select
-- interval: 300
-  name: 🇯🇵 日本节点
+- name: 🇯🇵 日本节点
   proxies:
   - 🇯🇵 日本 07 IIJ
   - 🇯🇵 日本 09 IIJ
@@ -650,24 +649,15 @@ proxy-groups:
   - 🇯🇵 日本 15 IIJ
   - 🇯🇵 日本 17 IIJ
   - 🇯🇵 日本 19 NTT
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-- interval: 300
-  name: 🇭🇰 香港自动选择（0.5倍率)
+  - 🌐 国际网站
+  type: select
+- name: 🇭🇰 香港流量优先
   proxies:
   - 🇭🇰 香港 09 HKT（0.5倍率）
   - 🇭🇰 香港 10 HKT（0.5倍率）
   - 🇭🇰 香港 11 HKBN（0.5倍率）
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-- fallback-filter:
-    fail-count: 1
-    interval: 300
-  name: 🇭🇰 香港流量优先Fallback
-  proxies:
-  - 🇭🇰 香港自动选择（0.5倍率)
   - 🌐 国际网站
-  type: fallback
+  type: select
 rule-providers:
   AsianMedia:
     behavior: classical
@@ -732,10 +722,10 @@ rule-providers:
 rules:
 - RULE-SET,custom-rules,🇯🇵 日本节点
 - RULE-SET,Direct,DIRECT
-- RULE-SET,Global,🇭🇰 香港流量优先Fallback
+- RULE-SET,Global,🇭🇰 香港流量优先
 - RULE-SET,AsianMedia,🎬 大陆流媒体国际版
 - RULE-SET,Game,🎮 游戏平台
-- RULE-SET,Global,🇭🇰 香港流量优先Fallback
+- RULE-SET,Global,🇭🇰 香港流量优先
 - RULE-SET,ChinaMedia,🎬 大陆流媒体
 - RULE-SET,China,🏠 大陆网站
 - RULE-SET,Lan,DIRECT
