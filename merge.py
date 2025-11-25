@@ -67,9 +67,9 @@ custom_groups = [
 
 # ---- 添加 Global Fallback ----
 custom_fallback = {
-    "name": FALLBACK_GROUP_NAME,
+    "name": "🇭🇰 香港流量优先Fallback",
     "type": "fallback",
-    "proxies": [LOCAL_HK_PROXY, REMOTE_GLOBAL_PROXY],
+    "proxies": hk05_nodes + [REMOTE_GLOBAL_PROXY],
     "fallback-filter": {
         "fail-count": 1,
         "interval": 300
