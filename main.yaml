@@ -1,0 +1,32 @@
+# main.yaml
+
+port: 7890
+socks-port: 7891
+mode: rule
+log-level: info
+allow-lan: true
+
+dns:
+  enable: true
+  enhanced-mode: fake-ip
+  nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
+
+# proxies: 会自动由 generate.js 注入机场节点
+proxies: []
+
+# 代理组：先注入机场原有的组，再插入我们自定义的组
+proxy-groups: []
+
+# 规则
+rule-providers:
+  custom-rules:
+    type: http
+    behavior: classical
+    path: ./rules/custom-rules.yaml
+    url: https://raw.githubusercontent.com/tiger-git2022/Clash-Customize/main/rule-providers/custom-rules.yaml
+    interval: 86400
+
+rules:
+  - RULE-SET,custom-rules,🇯🇵 日本节点
