@@ -61,4 +61,62 @@ custom_groups = [
         "type": "url-test",
         "proxies": hk05_nodes,
         "url": "http://www.gstatic.com/generate_204",
-        "interva
+        "interval": 300
+    }
+]
+
+# ---- 添加 Global Fallback ----
+custom_fallback = {
+    "name": FALLBACK_GROUP_NAME,
+    "type": "fallback",
+    "proxies": [LOCAL_HK_PROXY, REMOTE_GLOBAL_PROXY],
+    "fallback-filter": {
+        "fail-count": 1,
+        "interval": 300
+    }
+}
+
+# ---- 合并 proxy-groups ----
+final_groups = []
+
+existing_names = set()
+# 先加入 template/远程 groups
+for g in groups:
+    if g["name"] not in existing_names:
+        final_groups.append(g)
+        existing_names.add(g["name"])
+
+# 再加入自定义组（日本、香港）
+for g in custom_groups:
+    if g["name"] not in existing_names:
+        final_groups.append(g)
+        existing_names.add(g["name"])
+
+# 最后加入 fallback
+if FALLBACK_GROUP_NAME not in existing_names:
+    final_groups.append(custom_fallback)
+    existing_names.add(FALLBACK_GROUP_NAME)
+
+# ---- 合并最终 YAML ----
+final = template.copy()
+final["proxies"] = nodes
+final["proxy-groups"] = final_groups
+
+# ---- 合并规则 ----
+template_rules = template.get("rules", [])
+merged_rules = template_rules.copy() + rules  # 本地规则在前，远程规则在后
+
+# 替换 RULE-SET,Global 为 fallback group
+for i, rule in enumerate(merged_rules):
+    if isinstance(rule, str) and rule.startswith("RULE-SET,Global"):
+        merged_rules[i] = f"RULE-SET,Global,{FALLBACK_GROUP_NAME}"
+
+final["rules"] = merged_rules
+
+# ---- 合并 rule-providers ----
+template_providers = template.get("rule-providers", {})
+final["rule-providers"] = {**rule_providers, **template_providers}
+
+# ---- 输出 YAML ----
+save_yaml(OUTPUT_FILE, final)
+print("Generated output.yaml successfully.")
