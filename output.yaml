@@ -665,7 +665,9 @@ proxy-groups:
     interval: 300
   name: 🇭🇰 香港流量优先Fallback
   proxies:
-  - 🇭🇰 香港自动选择（0.5倍率)
+  - 🇭🇰 香港 09 HKT（0.5倍率）
+  - 🇭🇰 香港 10 HKT（0.5倍率）
+  - 🇭🇰 香港 11 HKBN（0.5倍率）
   - 🌐 国际网站
   type: fallback
 rule-providers:
