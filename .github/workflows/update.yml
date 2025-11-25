@@ -1,1 +1,43 @@
+name: Update Output
 
+# 触发条件
+on:
+  workflow_dispatch:   # 手动触发
+  schedule:           # 定时触发
+    - cron: '0 0 * * *'  # 每天 0 点执行一次
+
+jobs:
+  update-output:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ 拉取仓库代码
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2️⃣ 设置 Python 环境
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      # 3️⃣ 安装依赖（如果 merge.py 有 requirements.txt）
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      # 4️⃣ 执行 merge.py
+      - name: Run merge script
+        run: python merge.py
+
+      # 5️⃣ 提交并推送 output.yaml
+      - name: Commit and push output.yaml
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@users.noreply.github.com"
+          git add output.yaml
+          git commit -m "Update output.yaml [skip ci]" || echo "No changes to commit"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
