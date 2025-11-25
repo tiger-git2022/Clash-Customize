@@ -24,8 +24,8 @@ rule-providers:
   custom-rules:
     type: http
     behavior: classical
+    url: https://raw.githubusercontent.com/tiger-git2022/Clash-Customize/main/custom-rules.yaml
     path: ./rules/custom-rules.yaml
-    url: https://raw.githubusercontent.com/tiger-git2022/Clash-Customize/main/rule-providers/custom-rules.yaml
     interval: 86400
 
 rules:
