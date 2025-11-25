@@ -643,9 +643,6 @@ proxy-groups:
 - interval: 300
   name: 🇯🇵 日本节点
   proxies:
-  - 🇯🇵 日本 01 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 02 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 06 BGP IPv6（流媒体）
   - 🇯🇵 日本 07 IIJ
   - 🇯🇵 日本 09 IIJ
   - 🇯🇵 日本 11 IIJ IPv6
@@ -663,7 +660,69 @@ proxy-groups:
   - 🇭🇰 香港 11 HKBN（0.5倍率）
   type: url-test
   url: http://www.gstatic.com/generate_204
+- fallback-filter:
+    fail-count: 1
+    interval: 300
+  name: 🇭🇰 香港流量优先Fallback
+  proxies:
+  - 🇭🇰 香港自动选择（0.5倍率)
+  - 🌐 国际网站
+  type: fallback
 rule-providers:
+  AsianMedia:
+    behavior: classical
+    interval: 86400
+    path: ./RuleSet/AsianMedia.yaml
+    type: http
+    url: https://resource.touhou.center/ios_rule_script/rule/Clash/AsianMedia/AsianMedia.yaml
+  China:
+    behavior: classical
+    interval: 86400
+    path: ./RuleSet/China.yaml
+    type: http
+    url: https://resource.touhou.center/ios_rule_script/rule/Clash/China/China_Classical.yaml
+  ChinaIPs:
+    behavior: classical
+    interval: 86400
+    path: ./RuleSet/ChinaIPs.yaml
+    type: http
+    url: https://resource.touhou.center/ios_rule_script/rule/Clash/ChinaIPs/ChinaIPs_Classical.yaml
+  ChinaMedia:
+    behavior: classical
+    interval: 86400
+    path: ./RuleSet/ChinaMedia.yaml
+    type: http
+    url: https://resource.touhou.center/ios_rule_script/rule/Clash/ChinaMedia/ChinaMedia.yaml
+  Direct:
+    behavior: classical
+    interval: 86400
+    path: ./RuleSet/Direct.yaml
+    type: http
+    url: https://resource.touhou.center/ios_rule_script/rule/Clash/Direct/Direct.yaml
+  Game:
+    behavior: classical
+    interval: 86400
+    path: ./RuleSet/Game.yaml
+    type: http
+    url: https://resource.touhou.center/ios_rule_script/rule/Clash/Game/Game.yaml
+  Global:
+    behavior: classical
+    interval: 86400
+    path: ./RuleSet/Global.yaml
+    type: http
+    url: https://resource.touhou.center/ios_rule_script/rule/Clash/Global/Global_Classical.yaml
+  GlobalMedia:
+    behavior: classical
+    interval: 86400
+    path: ./RuleSet/GlobalMedia.yaml
+    type: http
+    url: https://resource.touhou.center/ios_rule_script/rule/Clash/GlobalMedia/GlobalMedia_Classical.yaml
+  Lan:
+    behavior: classical
+    interval: 86400
+    path: ./RuleSet/Lan.yaml
+    type: http
+    url: https://resource.touhou.center/ios_rule_script/rule/Clash/Lan/Lan.yaml
   custom-rules:
     behavior: classical
     interval: 86400
@@ -672,4 +731,14 @@ rule-providers:
     url: https://raw.githubusercontent.com/tiger-git2022/Clash-Customize/main/custom-rules.yaml
 rules:
 - RULE-SET,custom-rules,🇯🇵 日本节点
+- RULE-SET,Direct,DIRECT
+- RULE-SET,Global,🇭🇰 香港流量优先Fallback
+- RULE-SET,AsianMedia,🎬 大陆流媒体国际版
+- RULE-SET,Game,🎮 游戏平台
+- RULE-SET,Global,🇭🇰 香港流量优先Fallback
+- RULE-SET,ChinaMedia,🎬 大陆流媒体
+- RULE-SET,China,🏠 大陆网站
+- RULE-SET,Lan,DIRECT
+- RULE-SET,ChinaIPs,🏠 大陆流量
+- MATCH,🚥 其他流量
 socks-port: 7891
