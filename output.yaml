@@ -510,6 +510,12 @@ proxy-groups:
   proxies:
   - DIRECT
 rule-providers:
+  custom-rules:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/tiger-git2022/Clash-Customize/main/custom-rules.yaml
+    path: ./rules/custom-rules.yaml
+    interval: 86400
   Direct:
     type: http
     behavior: classical
