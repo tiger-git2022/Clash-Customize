@@ -565,6 +565,7 @@ rule-providers:
     url: https://resource.touhou.center/ios_rule_script/rule/Clash/ChinaIPs/ChinaIPs_Classical.yaml
     interval: 86400
 rules:
+- RULE-SET,custom-rules,🇯🇵 日本节点
 - RULE-SET,Direct,DIRECT
 - RULE-SET,GlobalMedia,🎬 国际流媒体
 - RULE-SET,AsianMedia,🎬 大陆流媒体国际版
