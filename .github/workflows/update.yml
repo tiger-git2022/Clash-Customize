@@ -6,7 +6,7 @@ on:
       - main      # 只在 main 分支 push 时触发，改成 '*' 所有分支触发
   workflow_dispatch:   # 手动触发
   schedule:
-    - cron: '*/5 * * * *'  # 每 5 分钟触发一次
+    - cron: '0 0 * * *'  # 每天 0 点 UTC 执行一次
 
 jobs:
   update-output:
