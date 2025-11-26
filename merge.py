@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-# merge.py - generate output.yaml preserving remote rules & rule-providers
-# and put local rules in front
+# merge.py - generate output.yaml preserving local and remote rules & rule-providers
 # Requires: requests, PyYAML
 
 import re
@@ -44,14 +43,15 @@ template = load_yaml(TEMPLATE_FILE)
 nodes = sub_yaml.get("proxies", []) or []
 remote_groups = sub_yaml.get("proxy-groups", []) or []
 
-# 保留远程规则
+# 保留远程规则与 rule-providers
 remote_rules = sub_yaml.get("rules", []) or []
 remote_rule_providers = sub_yaml.get("rule-providers", {}) or {}
 
-# 保留本地 template 的 rules
+# 保留本地 template 的 rules 和 rule-providers
 local_rules = template.get("rules", []) or []
+local_rule_providers = template.get("rule-providers", {}) or {}
 
-print(f"Loaded nodes={len(nodes)}, remote groups={len(remote_groups)}, remote rules={len(remote_rules)}, local rules={len(local_rules)}")
+print(f"Loaded nodes={len(nodes)}, remote groups={len(remote_groups)}, local rules={len(local_rules)}, remote rules={len(remote_rules)}")
 
 # -------- 分类节点 --------
 hk_nodes = [p["name"] for p in nodes if "香港" in p.get("name", "")]
@@ -131,14 +131,17 @@ for g in new_remote_groups:
     if name:
         seen.add(name)
 
+# -------- 合并 rule-providers --------
+# 本地 rule-providers + 远程 rule-providers
+merged_rule_providers = deepcopy(local_rule_providers)
+merged_rule_providers.update(remote_rule_providers)  # 远程覆盖同名本地
+
 # -------- 最终配置 --------
 final = deepcopy(template) if template else {}
 final["proxies"] = nodes
 final["proxy-groups"] = final_groups
-
-# -------- rules 顺序：本地在前，远程在后 --------
 final["rules"] = local_rules + remote_rules
-final["rule-providers"] = remote_rule_providers
+final["rule-providers"] = merged_rule_providers
 
 # -------- 保存输出 --------
 save_yaml(OUTPUT_FILE, final)
