@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-# merge.py - generate output.yaml while preserving remote rules & rule-providers
+# merge.py - generate output.yaml preserving remote rules & rule-providers
+# and put local rules in front
 # Requires: requests, PyYAML
 
 import re
@@ -43,18 +44,21 @@ template = load_yaml(TEMPLATE_FILE)
 nodes = sub_yaml.get("proxies", []) or []
 remote_groups = sub_yaml.get("proxy-groups", []) or []
 
-# 关键：保留远程规则
+# 保留远程规则
 remote_rules = sub_yaml.get("rules", []) or []
 remote_rule_providers = sub_yaml.get("rule-providers", {}) or {}
 
-print(f"Loaded nodes={len(nodes)}, groups={len(remote_groups)}, rules={len(remote_rules)}")
+# 保留本地 template 的 rules
+local_rules = template.get("rules", []) or []
+
+print(f"Loaded nodes={len(nodes)}, remote groups={len(remote_groups)}, remote rules={len(remote_rules)}, local rules={len(local_rules)}")
 
 # -------- 分类节点 --------
 hk_nodes = [p["name"] for p in nodes if "香港" in p.get("name", "")]
 jp_nodes = [p["name"] for p in nodes if "日本" in p.get("name", "")]
 tw_nodes = [p["name"] for p in nodes if "台湾" in p.get("name", "")]
 
-# -------- 倍率解析 --------
+# -------- 倍率解析与排序 --------
 def parse_multiplier_from_name(name: str) -> float:
     if "0.5倍率" in name:
         return 0.5
@@ -64,14 +68,6 @@ def parse_multiplier_from_name(name: str) -> float:
         return 2.0
     if "3倍率" in name:
         return 3.0
-
-    # fallback: match raw numbers
-    m = re.search(r"(0\.5|2\.5|2|3)", name)
-    if m and ("倍率" in name or re.search(r"\b0\.5\b|\b2\.5\b|\b2\b|\b3\b", name)):
-        try:
-            return float(m.group(1))
-        except:
-            pass
     return 1.0
 
 def sort_nodes(lst):
@@ -88,7 +84,7 @@ custom_groups = [
     {"name": TW_GROUP, "type": "select", "proxies": tw_nodes},
 ]
 
-# -------- 替换组内地区节点 --------
+# -------- 替换远程组中地区节点 --------
 def get_proxy_name(item):
     return item["name"] if isinstance(item, dict) else str(item)
 
@@ -96,7 +92,6 @@ def replace_region_proxies(proxy_list):
     new = []
     for p in proxy_list:
         pname = get_proxy_name(p)
-
         if "香港" in pname:
             if HK_GROUP not in new:
                 new.append(HK_GROUP)
@@ -109,10 +104,8 @@ def replace_region_proxies(proxy_list):
             if TW_GROUP not in new:
                 new.append(TW_GROUP)
             continue
-
         if pname not in new:
             new.append(pname)
-
     return new
 
 new_remote_groups = []
@@ -127,13 +120,9 @@ for g in remote_groups:
 # -------- 合并 proxy-groups --------
 final_groups = []
 seen = set()
-
-# 1. 三大区域组放最前面
 for cg in custom_groups:
     final_groups.append(cg)
     seen.add(cg["name"])
-
-# 2. 加入远程组（避免重复）
 for g in new_remote_groups:
     name = g.get("name") if isinstance(g, dict) else None
     if name and name in seen:
@@ -142,16 +131,15 @@ for g in new_remote_groups:
     if name:
         seen.add(name)
 
-# -------- 最终合并 template + 远程规则 --------
+# -------- 最终配置 --------
 final = deepcopy(template) if template else {}
-
 final["proxies"] = nodes
 final["proxy-groups"] = final_groups
 
-# **保留远程的 rules 与 rule-providers**
-final["rules"] = remote_rules
+# -------- rules 顺序：本地在前，远程在后 --------
+final["rules"] = local_rules + remote_rules
 final["rule-providers"] = remote_rule_providers
 
-# -------- 输出 --------
+# -------- 保存输出 --------
 save_yaml(OUTPUT_FILE, final)
 print("Saved ->", OUTPUT_FILE)
