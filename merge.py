@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# merge.py - generate output.yaml preserving local and remote rules & rule-providers
+# merge.py - generate output.yaml with custom groups always at front (both in proxy-groups list and inside each group)
 # Requires: requests, PyYAML
 
 import re
@@ -13,7 +13,7 @@ SUB_URL = "https://api.touhou.center/sub/bd44806c62afd82b/clash"
 TEMPLATE_FILE = "template.yaml"
 OUTPUT_FILE = "output.yaml"
 
-# 新节点组名称
+# 自定义节点组名称
 HK_GROUP = "🇭🇰 香港节点"
 JP_GROUP = "🇯🇵 日本节点"
 TW_GROUP = "🇹🇼 台湾节点"
@@ -43,11 +43,11 @@ template = load_yaml(TEMPLATE_FILE)
 nodes = sub_yaml.get("proxies", []) or []
 remote_groups = sub_yaml.get("proxy-groups", []) or []
 
-# 保留远程规则与 rule-providers
+# 保留远程 rules 和 rule-providers
 remote_rules = sub_yaml.get("rules", []) or []
 remote_rule_providers = sub_yaml.get("rule-providers", {}) or {}
 
-# 保留本地 template 的 rules 和 rule-providers
+# 本地 template 的 rules 和 rule-providers
 local_rules = template.get("rules", []) or []
 local_rule_providers = template.get("rule-providers", {}) or {}
 
@@ -84,29 +84,27 @@ custom_groups = [
     {"name": TW_GROUP, "type": "select", "proxies": tw_nodes},
 ]
 
-# -------- 替换远程组中地区节点 --------
+# -------- 替换远程组内地区节点（自定义节点组在 proxies 内始终最前） --------
 def get_proxy_name(item):
     return item["name"] if isinstance(item, dict) else str(item)
 
 def replace_region_proxies(proxy_list):
-    new = []
+    front_groups = []
+    remaining = []
     for p in proxy_list:
         pname = get_proxy_name(p)
-        if "香港" in pname:
-            if HK_GROUP not in new:
-                new.append(HK_GROUP)
+        if "香港" in pname and HK_GROUP not in front_groups:
+            front_groups.append(HK_GROUP)
             continue
-        if "日本" in pname:
-            if JP_GROUP not in new:
-                new.append(JP_GROUP)
+        if "日本" in pname and JP_GROUP not in front_groups:
+            front_groups.append(JP_GROUP)
             continue
-        if "台湾" in pname:
-            if TW_GROUP not in new:
-                new.append(TW_GROUP)
+        if "台湾" in pname and TW_GROUP not in front_groups:
+            front_groups.append(TW_GROUP)
             continue
-        if pname not in new:
-            new.append(pname)
-    return new
+        if pname not in remaining:
+            remaining.append(pname)
+    return front_groups + remaining
 
 new_remote_groups = []
 for g in remote_groups:
@@ -117,12 +115,10 @@ for g in remote_groups:
     else:
         new_remote_groups.append(g)
 
-# -------- 合并 proxy-groups --------
-final_groups = []
-seen = set()
-for cg in custom_groups:
-    final_groups.append(cg)
-    seen.add(cg["name"])
+# -------- 合并 proxy-groups（自定义组在最前面）--------
+final_groups = deepcopy(custom_groups)
+seen = set(cg["name"] for cg in custom_groups)
+
 for g in new_remote_groups:
     name = g.get("name") if isinstance(g, dict) else None
     if name and name in seen:
@@ -132,9 +128,8 @@ for g in new_remote_groups:
         seen.add(name)
 
 # -------- 合并 rule-providers --------
-# 本地 rule-providers + 远程 rule-providers
 merged_rule_providers = deepcopy(local_rule_providers)
-merged_rule_providers.update(remote_rule_providers)  # 远程覆盖同名本地
+merged_rule_providers.update(remote_rule_providers)
 
 # -------- 最终配置 --------
 final = deepcopy(template) if template else {}
