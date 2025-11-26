@@ -48,10 +48,10 @@ jobs:
           # 关键：使用显式 Token 进行 push
           git push "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main
 
-      # 6️⃣ Keep workflow active
-      - name: Keepalive Workflow
-        uses: gautamkrishnar/keepalive-workflow@v2
-        with:
-          use_api: true
-          # 即使默认能拿到，显式传入通常更稳妥
-          gh_token: ${{ secrets.GITHUB_TOKEN }}
+      # # 6️⃣ Keep workflow active
+      # - name: Keepalive Workflow
+      #   uses: gautamkrishnar/keepalive-workflow@v2
+      #   with:
+      #     use_api: true
+      #     # 即使默认能拿到，显式传入通常更稳妥
+      #     gh_token: ${{ secrets.GITHUB_TOKEN }}
