@@ -57,4 +57,4 @@ jobs:
         uses: gautamkrishnar/keepalive-workflow@v2
         with:
           use_api: true
-          gh _token: ${{ github.token }}
+          gh_token: ${{ github.token }}
