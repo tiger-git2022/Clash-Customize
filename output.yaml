@@ -510,11 +510,68 @@ proxy-groups:
   proxies:
   - DIRECT
 rule-providers:
-  custom-rules:
+  Direct:
     type: http
     behavior: classical
-    url: https://raw.githubusercontent.com/tiger-git2022/Clash-Customize/main/custom-rules.yaml
-    path: ./rules/custom-rules.yaml
+    path: ./RuleSet/Direct.yaml
+    url: https://resource.touhou.center/ios_rule_script/rule/Clash/Direct/Direct.yaml
+    interval: 86400
+  GlobalMedia:
+    type: http
+    behavior: classical
+    path: ./RuleSet/GlobalMedia.yaml
+    url: https://resource.touhou.center/ios_rule_script/rule/Clash/GlobalMedia/GlobalMedia_Classical.yaml
+    interval: 86400
+  AsianMedia:
+    type: http
+    behavior: classical
+    path: ./RuleSet/AsianMedia.yaml
+    url: https://resource.touhou.center/ios_rule_script/rule/Clash/AsianMedia/AsianMedia.yaml
+    interval: 86400
+  Game:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Game.yaml
+    url: https://resource.touhou.center/ios_rule_script/rule/Clash/Game/Game.yaml
+    interval: 86400
+  Global:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Global.yaml
+    url: https://resource.touhou.center/ios_rule_script/rule/Clash/Global/Global_Classical.yaml
+    interval: 86400
+  ChinaMedia:
+    type: http
+    behavior: classical
+    path: ./RuleSet/ChinaMedia.yaml
+    url: https://resource.touhou.center/ios_rule_script/rule/Clash/ChinaMedia/ChinaMedia.yaml
+    interval: 86400
+  China:
+    type: http
+    behavior: classical
+    path: ./RuleSet/China.yaml
+    url: https://resource.touhou.center/ios_rule_script/rule/Clash/China/China_Classical.yaml
+    interval: 86400
+  Lan:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Lan.yaml
+    url: https://resource.touhou.center/ios_rule_script/rule/Clash/Lan/Lan.yaml
+    interval: 86400
+  ChinaIPs:
+    type: http
+    behavior: classical
+    path: ./RuleSet/ChinaIPs.yaml
+    url: https://resource.touhou.center/ios_rule_script/rule/Clash/ChinaIPs/ChinaIPs_Classical.yaml
     interval: 86400
 rules:
-- RULE-SET,custom-rules,🇯🇵 日本节点
+- RULE-SET,Direct,DIRECT
+- RULE-SET,GlobalMedia,🎬 国际流媒体
+- RULE-SET,AsianMedia,🎬 大陆流媒体国际版
+- RULE-SET,Game,🎮 游戏平台
+- RULE-SET,Global,🌐 国际网站
+- RULE-SET,ChinaMedia,🎬 大陆流媒体
+- RULE-SET,China,🏠 大陆网站
+- RULE-SET,Lan,DIRECT
+- RULE-SET,ChinaIPs,🏠 大陆流量
+- MATCH,🚥 其他流量
