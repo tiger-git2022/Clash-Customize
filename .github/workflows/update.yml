@@ -52,9 +52,26 @@ jobs:
           # 使用 GitHub 官方内置 Token
           git push "https://${{ github.token }}@github.com/${{ github.repository }}.git" HEAD:main
 
-      # 6️⃣ Keep workflow active
-      - name: Keepalive Workflow
-        uses: gautamkrishnar/keepalive-workflow@v2
-        with:
-          use_api: true
-          gh_token: ${{ github.token }}
+      # 6️⃣ 【原生保活脚本】替代第三方 Action
+      # 逻辑：如果是定时任务触发，且距离上次提交超过 50 天，则强制提交一次空提交
+      - name: Auto Keepalive
+        if: github.event_name == 'schedule'
+        run: |
+          # 获取最近一次提交的时间戳
+          last_commit_unixtime=$(git log -1 --format=%ct)
+          current_unixtime=$(date +%s)
+          
+          # 计算天数差
+          days_diff=$(( ($current_unixtime - $last_commit_unixtime) / 86400 ))
+          echo "Days since last commit: $days_diff"
+          
+          # 如果超过 50 天没有提交，则提交一个空 commit
+          if [ "$days_diff" -gt 50 ]; then
+            echo "Repo inactive for too long. Pushing keepalive commit."
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit --allow-empty -m "Auto Keepalive [skip ci]"
+            git push "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main
+          else
+            echo "Repo is active. No keepalive needed."
+          fi
