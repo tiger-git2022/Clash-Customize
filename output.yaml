@@ -1,3 +1,7 @@
+port: 7890
+socks-port: 7891
+mode: rule
+log-level: info
 allow-lan: true
 dns:
   enable: true
@@ -5,287 +9,304 @@ dns:
   nameserver:
   - 1.1.1.1
   - 8.8.8.8
-log-level: info
-mode: rule
-port: 7890
 proxies:
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇷🇺 俄罗斯 01 RT IPv6
-  password: cPWRr+wwxb8AZRtX0VKtHVgCvo4Kz3IaZSxvDMuBdY0=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+- name: 🇷🇺 俄罗斯 01 RT IPv6
+  type: ss
+  server: 8da27279-fdbb-46d1-bfcc-02585bbd8931.jp.node.touhou.earth
   port: 8704
-  server: 8da27279-fdbb-46d1-bfcc-02585bbd8931.jp.node.touhou.earth
-  type: ss
+  password: cPWRr+wwxb8AZRtX0VKtHVgCvo4Kz3IaZSxvDMuBdY0=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇱🇺 卢森堡 01 HE（0.5倍率/无版权）
-  password: 4WO53hLrS4kGHPJdzX884jvFGY7WAU5WOVSYC4cuKEQ=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+- name: 🇱🇺 卢森堡 01 HE（0.5倍率/无版权）
+  type: ss
+  server: 906a315b-ee8a-4080-b9d7-d9321c618611.hk.node.touhou.earth
   port: 8904
-  server: 906a315b-ee8a-4080-b9d7-d9321c618611.hk.node.touhou.earth
-  type: ss
+  password: 4WO53hLrS4kGHPJdzX884jvFGY7WAU5WOVSYC4cuKEQ=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇹🇼 台湾 01 HiNet
-  password: /D7PppR1kMy6D3SJt/PtYDz5UbmJFQi/P9t+Tysthz4=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+- name: 🇹🇼 台湾 01 HiNet
+  type: ss
+  server: 906a315b-ee8a-4080-b9d7-d9321c618611.hk.node.touhou.earth
   port: 8401
-  server: 906a315b-ee8a-4080-b9d7-d9321c618611.hk.node.touhou.earth
-  type: ss
+  password: /D7PppR1kMy6D3SJt/PtYDz5UbmJFQi/P9t+Tysthz4=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇹🇼 台湾 02 HiNet
-  password: 8Q8jit4pzkBW2nHube38tvq9jVGN4uNMZ3cgtBVX+qA=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+- name: 🇹🇼 台湾 02 HiNet
+  type: ss
+  server: cd5f3710-1d89-4c55-ae17-ed2176e3e3cc.hk.node.touhou.earth
   port: 8402
-  server: cd5f3710-1d89-4c55-ae17-ed2176e3e3cc.hk.node.touhou.earth
-  type: ss
+  password: 8Q8jit4pzkBW2nHube38tvq9jVGN4uNMZ3cgtBVX+qA=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇹🇼 台湾 03 BGP IPv6
-  password: w+CzWRa2MjeBWmo+EQzTLe87zZXS5Ia6vXz65AmDKug=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+- name: 🇹🇼 台湾 03 BGP IPv6
+  type: ss
+  server: b2396c19-bbb9-4b6d-bdca-6fe1a14bb9de.hk.node.touhou.earth
   port: 8403
-  server: b2396c19-bbb9-4b6d-bdca-6fe1a14bb9de.hk.node.touhou.earth
-  type: ss
+  password: w+CzWRa2MjeBWmo+EQzTLe87zZXS5Ia6vXz65AmDKug=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇹🇷 土耳其 01 Comnet
-  password: IGAcQwIMpyxEydn0OhO2JVymIDqDu8hZmYAlLJpiyho=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+- name: 🇹🇷 土耳其 01 Comnet
+  type: ss
+  server: 48b6a209-9dfd-49f2-8c10-04e1aff77ca4.hk.node.touhou.earth
   port: 8901
-  server: 48b6a209-9dfd-49f2-8c10-04e1aff77ca4.hk.node.touhou.earth
-  type: ss
+  password: IGAcQwIMpyxEydn0OhO2JVymIDqDu8hZmYAlLJpiyho=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇧🇷 巴西 01 Ascenty
-  password: q3WKQUBnw7L283nL7ZgB/eWCrStRKPrZqXooy85pm6s=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
-  port: 8903
+- name: 🇧🇷 巴西 01 Ascenty
+  type: ss
   server: f88e4530-f4ef-4a02-8295-d05d3391e056.jp.node.touhou.earth
-  type: ss
+  port: 8903
+  password: q3WKQUBnw7L283nL7ZgB/eWCrStRKPrZqXooy85pm6s=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇩🇪 德国 01 Akamai IPv6
-  password: 1DG2tRC9YnErfFWjNaizgxjrSbfkN5BbiRwet4Kx/qY=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+- name: 🇩🇪 德国 01 Akamai IPv6
+  type: ss
+  server: cd5f3710-1d89-4c55-ae17-ed2176e3e3cc.hk.node.touhou.earth
   port: 8803
-  server: cd5f3710-1d89-4c55-ae17-ed2176e3e3cc.hk.node.touhou.earth
-  type: ss
+  password: 1DG2tRC9YnErfFWjNaizgxjrSbfkN5BbiRwet4Kx/qY=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇸🇬 新加坡 01 BGP IPv6（流媒体）
-  password: a3M8wwPfsLbRB+mhduDDowEL9SnK9gAP9ZoD566JKzw=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+- name: 🇸🇬 新加坡 01 BGP IPv6（流媒体）
+  type: ss
+  server: b2396c19-bbb9-4b6d-bdca-6fe1a14bb9de.hk.node.touhou.earth
   port: 8603
-  server: b2396c19-bbb9-4b6d-bdca-6fe1a14bb9de.hk.node.touhou.earth
-  type: ss
+  password: a3M8wwPfsLbRB+mhduDDowEL9SnK9gAP9ZoD566JKzw=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇸🇬 新加坡 02 BGP IPv6
-  password: hcoCuYFOSYeIq2XH7P3Pr7ttxp+eVJh0DYxYv/oeoec=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
-  port: 8601
+- name: 🇸🇬 新加坡 02 BGP IPv6
+  type: ss
   server: 48b6a209-9dfd-49f2-8c10-04e1aff77ca4.hk.node.touhou.earth
-  type: ss
+  port: 8601
+  password: hcoCuYFOSYeIq2XH7P3Pr7ttxp+eVJh0DYxYv/oeoec=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇯🇵 日本 01 电信/沪日专线（3倍率）
+- name: 🇯🇵 日本 01 电信/沪日专线（3倍率）
+  type: ss
+  server: 8da27279-fdbb-46d1-bfcc-02585bbd8931.jp.node.touhou.earth
+  port: 563
   password: HGqu3ecTcptSfFshThNYsjbTg6tKOTFHSvatVw2Ba4c=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
-  port: 563
-  server: 8da27279-fdbb-46d1-bfcc-02585bbd8931.jp.node.touhou.earth
-  type: ss
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇯🇵 日本 02 电信/沪日专线（3倍率）
+- name: 🇯🇵 日本 02 电信/沪日专线（3倍率）
+  type: ss
+  server: 4083f527-5574-40ba-9e63-bcc3919436c0.jp.node.touhou.earth
+  port: 563
   password: 9L99icrQsQ5H78XfXtqYIqgRDY/8ex/IpvkFfVYiquk=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
-  port: 563
-  server: 4083f527-5574-40ba-9e63-bcc3919436c0.jp.node.touhou.earth
-  type: ss
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇯🇵 日本 06 BGP IPv6（流媒体）
-  password: pTl604txlhOOJ7cMOr6XNVUtEgIc79gs9gKz9iYcQlA=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+- name: 🇯🇵 日本 06 BGP IPv6（流媒体）
+  type: ss
+  server: 4083f527-5574-40ba-9e63-bcc3919436c0.jp.node.touhou.earth
   port: 8202
-  server: 4083f527-5574-40ba-9e63-bcc3919436c0.jp.node.touhou.earth
-  type: ss
+  password: pTl604txlhOOJ7cMOr6XNVUtEgIc79gs9gKz9iYcQlA=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇯🇵 日本 07 IIJ
-  password: 36hvWtZvrJfi+ej/MVRZyoxo0HnKcCXeYx/5qXsfKfc=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+- name: 🇯🇵 日本 07 IIJ
+  type: ss
+  server: ce01acc1-9348-4dcc-ac4b-8ee7a0fe042d.jp.node.touhou.earth
   port: 8203
-  server: ce01acc1-9348-4dcc-ac4b-8ee7a0fe042d.jp.node.touhou.earth
-  type: ss
+  password: 36hvWtZvrJfi+ej/MVRZyoxo0HnKcCXeYx/5qXsfKfc=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇯🇵 日本 09 IIJ
-  password: 7VvGI75pQ+W5KZWk+89doPZMJY+r5BRfBzDimgvpDso=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+- name: 🇯🇵 日本 09 IIJ
+  type: ss
+  server: 8da27279-fdbb-46d1-bfcc-02585bbd8931.jp.node.touhou.earth
   port: 8205
-  server: 8da27279-fdbb-46d1-bfcc-02585bbd8931.jp.node.touhou.earth
-  type: ss
+  password: 7VvGI75pQ+W5KZWk+89doPZMJY+r5BRfBzDimgvpDso=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇯🇵 日本 11 IIJ IPv6
-  password: JqNJUIIp3CLWsVZicyQnyhWUx6IpsELKiUoCMMbRgIs=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+- name: 🇯🇵 日本 11 IIJ IPv6
+  type: ss
+  server: ce01acc1-9348-4dcc-ac4b-8ee7a0fe042d.jp.node.touhou.earth
   port: 8207
-  server: ce01acc1-9348-4dcc-ac4b-8ee7a0fe042d.jp.node.touhou.earth
-  type: ss
+  password: JqNJUIIp3CLWsVZicyQnyhWUx6IpsELKiUoCMMbRgIs=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇯🇵 日本 13 IIJ IPv6
-  password: IT6pPAV0V9AczX7JcPFtZ+BmRbp3lewg51C5vzcY4rU=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+- name: 🇯🇵 日本 13 IIJ IPv6
+  type: ss
+  server: 8da27279-fdbb-46d1-bfcc-02585bbd8931.jp.node.touhou.earth
   port: 8209
-  server: 8da27279-fdbb-46d1-bfcc-02585bbd8931.jp.node.touhou.earth
-  type: ss
+  password: IT6pPAV0V9AczX7JcPFtZ+BmRbp3lewg51C5vzcY4rU=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇯🇵 日本 15 IIJ
-  password: ziQ45S8UM+SEB8VnSVUmrj/1/tZ6M2IOK7DhLKQwLD8=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+- name: 🇯🇵 日本 15 IIJ
+  type: ss
+  server: ce01acc1-9348-4dcc-ac4b-8ee7a0fe042d.jp.node.touhou.earth
   port: 8211
-  server: ce01acc1-9348-4dcc-ac4b-8ee7a0fe042d.jp.node.touhou.earth
-  type: ss
+  password: ziQ45S8UM+SEB8VnSVUmrj/1/tZ6M2IOK7DhLKQwLD8=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇯🇵 日本 17 IIJ
-  password: +Wt8YNA4r19Dxox+6zteSVxLStih/wkRs0koKa4bVT0=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+- name: 🇯🇵 日本 17 IIJ
+  type: ss
+  server: 8da27279-fdbb-46d1-bfcc-02585bbd8931.jp.node.touhou.earth
   port: 8213
-  server: 8da27279-fdbb-46d1-bfcc-02585bbd8931.jp.node.touhou.earth
-  type: ss
+  password: +Wt8YNA4r19Dxox+6zteSVxLStih/wkRs0koKa4bVT0=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇯🇵 日本 19 NTT
-  password: ucgTewGY5z1AHqS3Ht6e+/dHORlKeI5W4mXeyAcsUXY=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+- name: 🇯🇵 日本 19 NTT
+  type: ss
+  server: 8da27279-fdbb-46d1-bfcc-02585bbd8931.jp.node.touhou.earth
   port: 8217
-  server: 8da27279-fdbb-46d1-bfcc-02585bbd8931.jp.node.touhou.earth
-  type: ss
+  password: ucgTewGY5z1AHqS3Ht6e+/dHORlKeI5W4mXeyAcsUXY=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇦🇺 澳大利亚 01 Akamai IPv6
-  password: ve3VqbnJJwpfdcUU+fKmdd66LN+9JEBz1uSj7fel5vs=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+- name: 🇦🇺 澳大利亚 01 Akamai IPv6
+  type: ss
+  server: 906a315b-ee8a-4080-b9d7-d9321c618611.hk.node.touhou.earth
   port: 8602
-  server: 906a315b-ee8a-4080-b9d7-d9321c618611.hk.node.touhou.earth
-  type: ss
+  password: ve3VqbnJJwpfdcUU+fKmdd66LN+9JEBz1uSj7fel5vs=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇺🇸 美国 01 BGP IPv6
-  password: Ghiz3/gKOaDxaLbwc0FKx3Nsa1gQ2ysAR//P6Gq1g+s=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+- name: 🇺🇸 美国 01 BGP IPv6
+  type: ss
+  server: 8da27279-fdbb-46d1-bfcc-02585bbd8931.jp.node.touhou.earth
   port: 8101
-  server: 8da27279-fdbb-46d1-bfcc-02585bbd8931.jp.node.touhou.earth
-  type: ss
+  password: Ghiz3/gKOaDxaLbwc0FKx3Nsa1gQ2ysAR//P6Gq1g+s=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇺🇸 美国 03 4837
-  password: ECN3EYPcEe9VPyyYLe334v194LO0Op/cVn0x6yeBIoY=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+- name: 🇺🇸 美国 03 4837
+  type: ss
+  server: ce01acc1-9348-4dcc-ac4b-8ee7a0fe042d.jp.node.touhou.earth
   port: 8103
-  server: ce01acc1-9348-4dcc-ac4b-8ee7a0fe042d.jp.node.touhou.earth
-  type: ss
+  password: ECN3EYPcEe9VPyyYLe334v194LO0Op/cVn0x6yeBIoY=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇺🇸 美国 05 BGP IPv6（流媒体）
-  password: yvt6bK1C1uPu5cLyjvdi69nUz+/EfLjU8RzJXT26+FY=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+- name: 🇺🇸 美国 05 BGP IPv6（流媒体）
+  type: ss
+  server: 8da27279-fdbb-46d1-bfcc-02585bbd8931.jp.node.touhou.earth
   port: 8105
-  server: 8da27279-fdbb-46d1-bfcc-02585bbd8931.jp.node.touhou.earth
-  type: ss
+  password: yvt6bK1C1uPu5cLyjvdi69nUz+/EfLjU8RzJXT26+FY=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇬🇧 英国 01 BGP IPv6
-  password: xiZfwYAhWHXdFp59tfKuKYF1cNpjXiSzzn14jVkrzXw=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
-  port: 8804
+- name: 🇬🇧 英国 01 BGP IPv6
+  type: ss
   server: b2396c19-bbb9-4b6d-bdca-6fe1a14bb9de.hk.node.touhou.earth
-  type: ss
+  port: 8804
+  password: xiZfwYAhWHXdFp59tfKuKYF1cNpjXiSzzn14jVkrzXw=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇦🇷 阿根廷 01 IFX
-  password: P6MSZrgh66R1ngrgm01fNJY8kd6U+qWLg/N4g1UkLvE=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
-  port: 8902
+- name: 🇦🇷 阿根廷 01 IFX
+  type: ss
   server: 4083f527-5574-40ba-9e63-bcc3919436c0.jp.node.touhou.earth
-  type: ss
+  port: 8902
+  password: P6MSZrgh66R1ngrgm01fNJY8kd6U+qWLg/N4g1UkLvE=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇦🇷 阿根廷 02 Sparkle
-  password: 98a1W9oAzoteYhRjvq9diXjk4JmJjrUb+qRYO8NqTmQ=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
-  port: 8905
+- name: 🇦🇷 阿根廷 02 Sparkle
+  type: ss
   server: ce01acc1-9348-4dcc-ac4b-8ee7a0fe042d.jp.node.touhou.earth
-  type: ss
+  port: 8905
+  password: 98a1W9oAzoteYhRjvq9diXjk4JmJjrUb+qRYO8NqTmQ=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇰🇷 韩国 01 SK（2.7倍率）
-  password: Myu/VhNfDmK8NDqNsypex/rxgAYG60p854ccHudXx9Y=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
-  port: 8501
+- name: 🇰🇷 韩国 01 SK（2.7倍率）
+  type: ss
   server: 8da27279-fdbb-46d1-bfcc-02585bbd8931.jp.node.touhou.earth
-  type: ss
+  port: 8501
+  password: Myu/VhNfDmK8NDqNsypex/rxgAYG60p854ccHudXx9Y=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇭🇰 香港 01 电信/深港专线（2.5倍率）
+- name: 🇭🇰 香港 01 电信/深港专线（2.5倍率）
+  type: ss
+  server: 3ee229e2-bc2a-4de3-a5b4-e34fc74d9fc5.hk.node.touhou.earth
+  port: 563
   password: XdpLpASY7X//w+YjJEFIA20g9GePNwBn+H+I3uNik9Q=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
-  port: 563
-  server: 3ee229e2-bc2a-4de3-a5b4-e34fc74d9fc5.hk.node.touhou.earth
-  type: ss
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇭🇰 香港 02 电信/深港专线（2.5倍率）
+- name: 🇭🇰 香港 02 电信/深港专线（2.5倍率）
+  type: ss
+  server: a12e87e9-e6b3-4441-80df-a55a1c66d7e0.hk.node.touhou.earth
+  port: 563
   password: la6HgmgXv+nhCvyaCxNs+74uOOUHbZndQbQuUQg3Bqs=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
-  port: 563
-  server: a12e87e9-e6b3-4441-80df-a55a1c66d7e0.hk.node.touhou.earth
-  type: ss
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇭🇰 香港 05 移动/深港专线（2倍率）
-  password: Lk0cSumu2C7puRfXnPBpXks7MKoO5paWlZ4+HMgqAcw=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
-  port: 563
+- name: 🇭🇰 香港 05 移动/深港专线（2倍率）
+  type: ss
   server: 906a315b-ee8a-4080-b9d7-d9321c618611.hk.node.touhou.earth
-  type: ss
-  udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇭🇰 香港 06 移动/深港专线（2倍率）
-  password: 0BT1MW4YBJ9PYrzGHuBr4tbVGW4iJw3UB66qX0+Qv4M=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
   port: 563
+  password: Lk0cSumu2C7puRfXnPBpXks7MKoO5paWlZ4+HMgqAcw=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
+  udp: true
+- name: 🇭🇰 香港 06 移动/深港专线（2倍率）
+  type: ss
   server: cd5f3710-1d89-4c55-ae17-ed2176e3e3cc.hk.node.touhou.earth
-  type: ss
+  port: 563
+  password: 0BT1MW4YBJ9PYrzGHuBr4tbVGW4iJw3UB66qX0+Qv4M=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇭🇰 香港 09 HKT（0.5倍率）
-  password: NF251CV5i/qgFk/HzvnUYABb6/l90O7mhmxdJbR8E90=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
-  port: 8302
+- name: 🇭🇰 香港 09 HKT（0.5倍率）
+  type: ss
   server: 3ee229e2-bc2a-4de3-a5b4-e34fc74d9fc5.hk.node.touhou.earth
-  type: ss
+  port: 8302
+  password: NF251CV5i/qgFk/HzvnUYABb6/l90O7mhmxdJbR8E90=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇭🇰 香港 10 HKT（0.5倍率）
-  password: Uj3lPeZDQqqEdbfnz/7SVXsxS+9QQfLhSr3WeFNi4HU=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
-  port: 8304
+- name: 🇭🇰 香港 10 HKT（0.5倍率）
+  type: ss
   server: 1a031860-45df-4fbc-b51e-0a5f06a17fee.hk.node.touhou.earth
-  type: ss
+  port: 8304
+  password: Uj3lPeZDQqqEdbfnz/7SVXsxS+9QQfLhSr3WeFNi4HU=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇭🇰 香港 11 HKBN（0.5倍率）
-  password: QjMRVEntriotJF052a3Tyj/N0HRrF8B6WpeHQUs+hAc=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
-  port: 8303
+- name: 🇭🇰 香港 11 HKBN（0.5倍率）
+  type: ss
   server: b51ff850-89a3-43de-bdb3-5e7a9da043d9.hk.node.touhou.earth
-  type: ss
+  port: 8303
+  password: QjMRVEntriotJF052a3Tyj/N0HRrF8B6WpeHQUs+hAc=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
-- cipher: 2022-blake3-aes-256-gcm
-  name: 🇭🇰 香港 12 BGP IPv6（流媒体）
-  password: 1BBiwiDOER0rqWznB684egy4Br6iGkRWnOXYhCbJ/JU=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
-  port: 8306
-  server: a12e87e9-e6b3-4441-80df-a55a1c66d7e0.hk.node.touhou.earth
+- name: 🇭🇰 香港 12 BGP IPv6（流媒体）
   type: ss
+  server: a12e87e9-e6b3-4441-80df-a55a1c66d7e0.hk.node.touhou.earth
+  port: 8306
+  password: 1BBiwiDOER0rqWznB684egy4Br6iGkRWnOXYhCbJ/JU=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
+  cipher: 2022-blake3-aes-256-gcm
   udp: true
 proxy-groups:
+- name: 🇭🇰 香港节点
+  type: select
+  proxies:
+  - 🇭🇰 香港 09 HKT（0.5倍率）
+  - 🇭🇰 香港 10 HKT（0.5倍率）
+  - 🇭🇰 香港 11 HKBN（0.5倍率）
+  - 🇭🇰 香港 12 BGP IPv6（流媒体）
+  - 🇭🇰 香港 05 移动/深港专线（2倍率）
+  - 🇭🇰 香港 06 移动/深港专线（2倍率）
+  - 🇭🇰 香港 01 电信/深港专线（2.5倍率）
+  - 🇭🇰 香港 02 电信/深港专线（2.5倍率）
+- name: 🇯🇵 日本节点
+  type: select
+  proxies:
+  - 🇯🇵 日本 06 BGP IPv6（流媒体）
+  - 🇯🇵 日本 07 IIJ
+  - 🇯🇵 日本 09 IIJ
+  - 🇯🇵 日本 11 IIJ IPv6
+  - 🇯🇵 日本 13 IIJ IPv6
+  - 🇯🇵 日本 15 IIJ
+  - 🇯🇵 日本 17 IIJ
+  - 🇯🇵 日本 19 NTT
+  - 🇯🇵 日本 01 电信/沪日专线（3倍率）
+  - 🇯🇵 日本 02 电信/沪日专线（3倍率）
+- name: 🇹🇼 台湾节点
+  type: select
+  proxies:
+  - 🇹🇼 台湾 01 HiNet
+  - 🇹🇼 台湾 02 HiNet
+  - 🇹🇼 台湾 03 BGP IPv6
 - name: 🌐 国外流量
+  type: select
   proxies:
   - ♻️ 故障切换
   - ➡️ 直接连接
   - 🇷🇺 俄罗斯 01 RT IPv6
   - 🇱🇺 卢森堡 01 HE（0.5倍率/无版权）
-  - 🇹🇼 台湾 01 HiNet
-  - 🇹🇼 台湾 02 HiNet
-  - 🇹🇼 台湾 03 BGP IPv6
+  - 🇹🇼 台湾节点
   - 🇹🇷 土耳其 01 Comnet
   - 🇧🇷 巴西 01 Ascenty
   - 🇩🇪 德国 01 Akamai IPv6
   - 🇸🇬 新加坡 01 BGP IPv6（流媒体）
   - 🇸🇬 新加坡 02 BGP IPv6
-  - 🇯🇵 日本 01 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 02 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 06 BGP IPv6（流媒体）
-  - 🇯🇵 日本 07 IIJ
-  - 🇯🇵 日本 09 IIJ
-  - 🇯🇵 日本 11 IIJ IPv6
-  - 🇯🇵 日本 13 IIJ IPv6
-  - 🇯🇵 日本 15 IIJ
-  - 🇯🇵 日本 17 IIJ
-  - 🇯🇵 日本 19 NTT
+  - 🇯🇵 日本节点
   - 🇦🇺 澳大利亚 01 Akamai IPv6
   - 🇺🇸 美国 01 BGP IPv6
   - 🇺🇸 美国 03 4837
@@ -294,85 +315,49 @@ proxy-groups:
   - 🇦🇷 阿根廷 01 IFX
   - 🇦🇷 阿根廷 02 Sparkle
   - 🇰🇷 韩国 01 SK（2.7倍率）
-  - 🇭🇰 香港 01 电信/深港专线（2.5倍率）
-  - 🇭🇰 香港 02 电信/深港专线（2.5倍率）
-  - 🇭🇰 香港 05 移动/深港专线（2倍率）
-  - 🇭🇰 香港 06 移动/深港专线（2倍率）
-  - 🇭🇰 香港 09 HKT（0.5倍率）
-  - 🇭🇰 香港 10 HKT（0.5倍率）
-  - 🇭🇰 香港 11 HKBN（0.5倍率）
-  - 🇭🇰 香港 12 BGP IPv6（流媒体）
-  type: select
+  - 🇭🇰 香港节点
 - name: 🚥 其他流量
+  type: select
   proxies:
   - 🌐 国外流量
   - ➡️ 直接连接
-  type: select
-- interval: 300
-  name: ♻️ 故障切换
-  proxies:
-  - 🇷🇺 俄罗斯 01 RT IPv6
-  - 🇱🇺 卢森堡 01 HE（0.5倍率/无版权）
-  - 🇹🇼 台湾 01 HiNet
-  - 🇹🇼 台湾 02 HiNet
-  - 🇹🇼 台湾 03 BGP IPv6
-  - 🇹🇷 土耳其 01 Comnet
-  - 🇧🇷 巴西 01 Ascenty
-  - 🇩🇪 德国 01 Akamai IPv6
-  - 🇸🇬 新加坡 01 BGP IPv6（流媒体）
-  - 🇸🇬 新加坡 02 BGP IPv6
-  - 🇯🇵 日本 01 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 02 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 06 BGP IPv6（流媒体）
-  - 🇯🇵 日本 07 IIJ
-  - 🇯🇵 日本 09 IIJ
-  - 🇯🇵 日本 11 IIJ IPv6
-  - 🇯🇵 日本 13 IIJ IPv6
-  - 🇯🇵 日本 15 IIJ
-  - 🇯🇵 日本 17 IIJ
-  - 🇯🇵 日本 19 NTT
-  - 🇦🇺 澳大利亚 01 Akamai IPv6
-  - 🇺🇸 美国 01 BGP IPv6
-  - 🇺🇸 美国 03 4837
-  - 🇺🇸 美国 05 BGP IPv6（流媒体）
-  - 🇬🇧 英国 01 BGP IPv6
-  - 🇦🇷 阿根廷 01 IFX
-  - 🇦🇷 阿根廷 02 Sparkle
-  - 🇰🇷 韩国 01 SK（2.7倍率）
-  - 🇭🇰 香港 01 电信/深港专线（2.5倍率）
-  - 🇭🇰 香港 02 电信/深港专线（2.5倍率）
-  - 🇭🇰 香港 05 移动/深港专线（2倍率）
-  - 🇭🇰 香港 06 移动/深港专线（2倍率）
-  - 🇭🇰 香港 09 HKT（0.5倍率）
-  - 🇭🇰 香港 10 HKT（0.5倍率）
-  - 🇭🇰 香港 11 HKBN（0.5倍率）
-  - 🇭🇰 香港 12 BGP IPv6（流媒体）
+- name: ♻️ 故障切换
   type: fallback
   url: https://cp.cloudflare.com/generate_204
+  interval: 300
+  proxies:
+  - 🇷🇺 俄罗斯 01 RT IPv6
+  - 🇱🇺 卢森堡 01 HE（0.5倍率/无版权）
+  - 🇹🇼 台湾节点
+  - 🇹🇷 土耳其 01 Comnet
+  - 🇧🇷 巴西 01 Ascenty
+  - 🇩🇪 德国 01 Akamai IPv6
+  - 🇸🇬 新加坡 01 BGP IPv6（流媒体）
+  - 🇸🇬 新加坡 02 BGP IPv6
+  - 🇯🇵 日本节点
+  - 🇦🇺 澳大利亚 01 Akamai IPv6
+  - 🇺🇸 美国 01 BGP IPv6
+  - 🇺🇸 美国 03 4837
+  - 🇺🇸 美国 05 BGP IPv6（流媒体）
+  - 🇬🇧 英国 01 BGP IPv6
+  - 🇦🇷 阿根廷 01 IFX
+  - 🇦🇷 阿根廷 02 Sparkle
+  - 🇰🇷 韩国 01 SK（2.7倍率）
+  - 🇭🇰 香港节点
 - name: 🎬 国际流媒体
+  type: select
   proxies:
   - 🌐 国外流量
   - ➡️ 直接连接
   - 🇷🇺 俄罗斯 01 RT IPv6
   - 🇱🇺 卢森堡 01 HE（0.5倍率/无版权）
-  - 🇹🇼 台湾 01 HiNet
-  - 🇹🇼 台湾 02 HiNet
-  - 🇹🇼 台湾 03 BGP IPv6
+  - 🇹🇼 台湾节点
   - 🇹🇷 土耳其 01 Comnet
   - 🇧🇷 巴西 01 Ascenty
   - 🇩🇪 德国 01 Akamai IPv6
   - 🇸🇬 新加坡 01 BGP IPv6（流媒体）
   - 🇸🇬 新加坡 02 BGP IPv6
-  - 🇯🇵 日本 01 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 02 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 06 BGP IPv6（流媒体）
-  - 🇯🇵 日本 07 IIJ
-  - 🇯🇵 日本 09 IIJ
-  - 🇯🇵 日本 11 IIJ IPv6
-  - 🇯🇵 日本 13 IIJ IPv6
-  - 🇯🇵 日本 15 IIJ
-  - 🇯🇵 日本 17 IIJ
-  - 🇯🇵 日本 19 NTT
+  - 🇯🇵 日本节点
   - 🇦🇺 澳大利亚 01 Akamai IPv6
   - 🇺🇸 美国 01 BGP IPv6
   - 🇺🇸 美国 03 4837
@@ -381,39 +366,21 @@ proxy-groups:
   - 🇦🇷 阿根廷 01 IFX
   - 🇦🇷 阿根廷 02 Sparkle
   - 🇰🇷 韩国 01 SK（2.7倍率）
-  - 🇭🇰 香港 01 电信/深港专线（2.5倍率）
-  - 🇭🇰 香港 02 电信/深港专线（2.5倍率）
-  - 🇭🇰 香港 05 移动/深港专线（2倍率）
-  - 🇭🇰 香港 06 移动/深港专线（2倍率）
-  - 🇭🇰 香港 09 HKT（0.5倍率）
-  - 🇭🇰 香港 10 HKT（0.5倍率）
-  - 🇭🇰 香港 11 HKBN（0.5倍率）
-  - 🇭🇰 香港 12 BGP IPv6（流媒体）
-  type: select
+  - 🇭🇰 香港节点
 - name: 🎬 大陆流媒体国际版
+  type: select
   proxies:
   - ➡️ 直接连接
   - 🌐 国外流量
   - 🇷🇺 俄罗斯 01 RT IPv6
   - 🇱🇺 卢森堡 01 HE（0.5倍率/无版权）
-  - 🇹🇼 台湾 01 HiNet
-  - 🇹🇼 台湾 02 HiNet
-  - 🇹🇼 台湾 03 BGP IPv6
+  - 🇹🇼 台湾节点
   - 🇹🇷 土耳其 01 Comnet
   - 🇧🇷 巴西 01 Ascenty
   - 🇩🇪 德国 01 Akamai IPv6
   - 🇸🇬 新加坡 01 BGP IPv6（流媒体）
   - 🇸🇬 新加坡 02 BGP IPv6
-  - 🇯🇵 日本 01 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 02 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 06 BGP IPv6（流媒体）
-  - 🇯🇵 日本 07 IIJ
-  - 🇯🇵 日本 09 IIJ
-  - 🇯🇵 日本 11 IIJ IPv6
-  - 🇯🇵 日本 13 IIJ IPv6
-  - 🇯🇵 日本 15 IIJ
-  - 🇯🇵 日本 17 IIJ
-  - 🇯🇵 日本 19 NTT
+  - 🇯🇵 日本节点
   - 🇦🇺 澳大利亚 01 Akamai IPv6
   - 🇺🇸 美国 01 BGP IPv6
   - 🇺🇸 美国 03 4837
@@ -422,39 +389,21 @@ proxy-groups:
   - 🇦🇷 阿根廷 01 IFX
   - 🇦🇷 阿根廷 02 Sparkle
   - 🇰🇷 韩国 01 SK（2.7倍率）
-  - 🇭🇰 香港 01 电信/深港专线（2.5倍率）
-  - 🇭🇰 香港 02 电信/深港专线（2.5倍率）
-  - 🇭🇰 香港 05 移动/深港专线（2倍率）
-  - 🇭🇰 香港 06 移动/深港专线（2倍率）
-  - 🇭🇰 香港 09 HKT（0.5倍率）
-  - 🇭🇰 香港 10 HKT（0.5倍率）
-  - 🇭🇰 香港 11 HKBN（0.5倍率）
-  - 🇭🇰 香港 12 BGP IPv6（流媒体）
-  type: select
+  - 🇭🇰 香港节点
 - name: 🎮 游戏平台
+  type: select
   proxies:
   - 🌐 国外流量
   - ➡️ 直接连接
   - 🇷🇺 俄罗斯 01 RT IPv6
   - 🇱🇺 卢森堡 01 HE（0.5倍率/无版权）
-  - 🇹🇼 台湾 01 HiNet
-  - 🇹🇼 台湾 02 HiNet
-  - 🇹🇼 台湾 03 BGP IPv6
+  - 🇹🇼 台湾节点
   - 🇹🇷 土耳其 01 Comnet
   - 🇧🇷 巴西 01 Ascenty
   - 🇩🇪 德国 01 Akamai IPv6
   - 🇸🇬 新加坡 01 BGP IPv6（流媒体）
   - 🇸🇬 新加坡 02 BGP IPv6
-  - 🇯🇵 日本 01 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 02 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 06 BGP IPv6（流媒体）
-  - 🇯🇵 日本 07 IIJ
-  - 🇯🇵 日本 09 IIJ
-  - 🇯🇵 日本 11 IIJ IPv6
-  - 🇯🇵 日本 13 IIJ IPv6
-  - 🇯🇵 日本 15 IIJ
-  - 🇯🇵 日本 17 IIJ
-  - 🇯🇵 日本 19 NTT
+  - 🇯🇵 日本节点
   - 🇦🇺 澳大利亚 01 Akamai IPv6
   - 🇺🇸 美国 01 BGP IPv6
   - 🇺🇸 美国 03 4837
@@ -463,39 +412,21 @@ proxy-groups:
   - 🇦🇷 阿根廷 01 IFX
   - 🇦🇷 阿根廷 02 Sparkle
   - 🇰🇷 韩国 01 SK（2.7倍率）
-  - 🇭🇰 香港 01 电信/深港专线（2.5倍率）
-  - 🇭🇰 香港 02 电信/深港专线（2.5倍率）
-  - 🇭🇰 香港 05 移动/深港专线（2倍率）
-  - 🇭🇰 香港 06 移动/深港专线（2倍率）
-  - 🇭🇰 香港 09 HKT（0.5倍率）
-  - 🇭🇰 香港 10 HKT（0.5倍率）
-  - 🇭🇰 香港 11 HKBN（0.5倍率）
-  - 🇭🇰 香港 12 BGP IPv6（流媒体）
-  type: select
+  - 🇭🇰 香港节点
 - name: 🌐 国际网站
+  type: select
   proxies:
   - 🌐 国外流量
   - ➡️ 直接连接
   - 🇷🇺 俄罗斯 01 RT IPv6
   - 🇱🇺 卢森堡 01 HE（0.5倍率/无版权）
-  - 🇹🇼 台湾 01 HiNet
-  - 🇹🇼 台湾 02 HiNet
-  - 🇹🇼 台湾 03 BGP IPv6
+  - 🇹🇼 台湾节点
   - 🇹🇷 土耳其 01 Comnet
   - 🇧🇷 巴西 01 Ascenty
   - 🇩🇪 德国 01 Akamai IPv6
   - 🇸🇬 新加坡 01 BGP IPv6（流媒体）
   - 🇸🇬 新加坡 02 BGP IPv6
-  - 🇯🇵 日本 01 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 02 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 06 BGP IPv6（流媒体）
-  - 🇯🇵 日本 07 IIJ
-  - 🇯🇵 日本 09 IIJ
-  - 🇯🇵 日本 11 IIJ IPv6
-  - 🇯🇵 日本 13 IIJ IPv6
-  - 🇯🇵 日本 15 IIJ
-  - 🇯🇵 日本 17 IIJ
-  - 🇯🇵 日本 19 NTT
+  - 🇯🇵 日本节点
   - 🇦🇺 澳大利亚 01 Akamai IPv6
   - 🇺🇸 美国 01 BGP IPv6
   - 🇺🇸 美国 03 4837
@@ -504,39 +435,21 @@ proxy-groups:
   - 🇦🇷 阿根廷 01 IFX
   - 🇦🇷 阿根廷 02 Sparkle
   - 🇰🇷 韩国 01 SK（2.7倍率）
-  - 🇭🇰 香港 01 电信/深港专线（2.5倍率）
-  - 🇭🇰 香港 02 电信/深港专线（2.5倍率）
-  - 🇭🇰 香港 05 移动/深港专线（2倍率）
-  - 🇭🇰 香港 06 移动/深港专线（2倍率）
-  - 🇭🇰 香港 09 HKT（0.5倍率）
-  - 🇭🇰 香港 10 HKT（0.5倍率）
-  - 🇭🇰 香港 11 HKBN（0.5倍率）
-  - 🇭🇰 香港 12 BGP IPv6（流媒体）
-  type: select
+  - 🇭🇰 香港节点
 - name: 🏠 大陆流量
+  type: select
   proxies:
   - ➡️ 直接连接
   - 🌐 国外流量
   - 🇷🇺 俄罗斯 01 RT IPv6
   - 🇱🇺 卢森堡 01 HE（0.5倍率/无版权）
-  - 🇹🇼 台湾 01 HiNet
-  - 🇹🇼 台湾 02 HiNet
-  - 🇹🇼 台湾 03 BGP IPv6
+  - 🇹🇼 台湾节点
   - 🇹🇷 土耳其 01 Comnet
   - 🇧🇷 巴西 01 Ascenty
   - 🇩🇪 德国 01 Akamai IPv6
   - 🇸🇬 新加坡 01 BGP IPv6（流媒体）
   - 🇸🇬 新加坡 02 BGP IPv6
-  - 🇯🇵 日本 01 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 02 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 06 BGP IPv6（流媒体）
-  - 🇯🇵 日本 07 IIJ
-  - 🇯🇵 日本 09 IIJ
-  - 🇯🇵 日本 11 IIJ IPv6
-  - 🇯🇵 日本 13 IIJ IPv6
-  - 🇯🇵 日本 15 IIJ
-  - 🇯🇵 日本 17 IIJ
-  - 🇯🇵 日本 19 NTT
+  - 🇯🇵 日本节点
   - 🇦🇺 澳大利亚 01 Akamai IPv6
   - 🇺🇸 美国 01 BGP IPv6
   - 🇺🇸 美国 03 4837
@@ -545,39 +458,21 @@ proxy-groups:
   - 🇦🇷 阿根廷 01 IFX
   - 🇦🇷 阿根廷 02 Sparkle
   - 🇰🇷 韩国 01 SK（2.7倍率）
-  - 🇭🇰 香港 01 电信/深港专线（2.5倍率）
-  - 🇭🇰 香港 02 电信/深港专线（2.5倍率）
-  - 🇭🇰 香港 05 移动/深港专线（2倍率）
-  - 🇭🇰 香港 06 移动/深港专线（2倍率）
-  - 🇭🇰 香港 09 HKT（0.5倍率）
-  - 🇭🇰 香港 10 HKT（0.5倍率）
-  - 🇭🇰 香港 11 HKBN（0.5倍率）
-  - 🇭🇰 香港 12 BGP IPv6（流媒体）
-  type: select
+  - 🇭🇰 香港节点
 - name: 🎬 大陆流媒体
+  type: select
   proxies:
   - 🏠 大陆流量
   - ➡️ 直接连接
   - 🇷🇺 俄罗斯 01 RT IPv6
   - 🇱🇺 卢森堡 01 HE（0.5倍率/无版权）
-  - 🇹🇼 台湾 01 HiNet
-  - 🇹🇼 台湾 02 HiNet
-  - 🇹🇼 台湾 03 BGP IPv6
+  - 🇹🇼 台湾节点
   - 🇹🇷 土耳其 01 Comnet
   - 🇧🇷 巴西 01 Ascenty
   - 🇩🇪 德国 01 Akamai IPv6
   - 🇸🇬 新加坡 01 BGP IPv6（流媒体）
   - 🇸🇬 新加坡 02 BGP IPv6
-  - 🇯🇵 日本 01 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 02 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 06 BGP IPv6（流媒体）
-  - 🇯🇵 日本 07 IIJ
-  - 🇯🇵 日本 09 IIJ
-  - 🇯🇵 日本 11 IIJ IPv6
-  - 🇯🇵 日本 13 IIJ IPv6
-  - 🇯🇵 日本 15 IIJ
-  - 🇯🇵 日本 17 IIJ
-  - 🇯🇵 日本 19 NTT
+  - 🇯🇵 日本节点
   - 🇦🇺 澳大利亚 01 Akamai IPv6
   - 🇺🇸 美国 01 BGP IPv6
   - 🇺🇸 美国 03 4837
@@ -586,39 +481,21 @@ proxy-groups:
   - 🇦🇷 阿根廷 01 IFX
   - 🇦🇷 阿根廷 02 Sparkle
   - 🇰🇷 韩国 01 SK（2.7倍率）
-  - 🇭🇰 香港 01 电信/深港专线（2.5倍率）
-  - 🇭🇰 香港 02 电信/深港专线（2.5倍率）
-  - 🇭🇰 香港 05 移动/深港专线（2倍率）
-  - 🇭🇰 香港 06 移动/深港专线（2倍率）
-  - 🇭🇰 香港 09 HKT（0.5倍率）
-  - 🇭🇰 香港 10 HKT（0.5倍率）
-  - 🇭🇰 香港 11 HKBN（0.5倍率）
-  - 🇭🇰 香港 12 BGP IPv6（流媒体）
-  type: select
+  - 🇭🇰 香港节点
 - name: 🏠 大陆网站
+  type: select
   proxies:
   - 🏠 大陆流量
   - ➡️ 直接连接
   - 🇷🇺 俄罗斯 01 RT IPv6
   - 🇱🇺 卢森堡 01 HE（0.5倍率/无版权）
-  - 🇹🇼 台湾 01 HiNet
-  - 🇹🇼 台湾 02 HiNet
-  - 🇹🇼 台湾 03 BGP IPv6
+  - 🇹🇼 台湾节点
   - 🇹🇷 土耳其 01 Comnet
   - 🇧🇷 巴西 01 Ascenty
   - 🇩🇪 德国 01 Akamai IPv6
   - 🇸🇬 新加坡 01 BGP IPv6（流媒体）
   - 🇸🇬 新加坡 02 BGP IPv6
-  - 🇯🇵 日本 01 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 02 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 06 BGP IPv6（流媒体）
-  - 🇯🇵 日本 07 IIJ
-  - 🇯🇵 日本 09 IIJ
-  - 🇯🇵 日本 11 IIJ IPv6
-  - 🇯🇵 日本 13 IIJ IPv6
-  - 🇯🇵 日本 15 IIJ
-  - 🇯🇵 日本 17 IIJ
-  - 🇯🇵 日本 19 NTT
+  - 🇯🇵 日本节点
   - 🇦🇺 澳大利亚 01 Akamai IPv6
   - 🇺🇸 美国 01 BGP IPv6
   - 🇺🇸 美国 03 4837
@@ -627,108 +504,17 @@ proxy-groups:
   - 🇦🇷 阿根廷 01 IFX
   - 🇦🇷 阿根廷 02 Sparkle
   - 🇰🇷 韩国 01 SK（2.7倍率）
-  - 🇭🇰 香港 01 电信/深港专线（2.5倍率）
-  - 🇭🇰 香港 02 电信/深港专线（2.5倍率）
-  - 🇭🇰 香港 05 移动/深港专线（2倍率）
-  - 🇭🇰 香港 06 移动/深港专线（2倍率）
-  - 🇭🇰 香港 09 HKT（0.5倍率）
-  - 🇭🇰 香港 10 HKT（0.5倍率）
-  - 🇭🇰 香港 11 HKBN（0.5倍率）
-  - 🇭🇰 香港 12 BGP IPv6（流媒体）
-  type: select
+  - 🇭🇰 香港节点
 - name: ➡️ 直接连接
+  type: select
   proxies:
   - DIRECT
-  type: select
-- name: 🇯🇵 日本节点
-  proxies:
-  - 🇯🇵 日本 07 IIJ
-  - 🇯🇵 日本 09 IIJ
-  - 🇯🇵 日本 11 IIJ IPv6
-  - 🇯🇵 日本 13 IIJ IPv6
-  - 🇯🇵 日本 15 IIJ
-  - 🇯🇵 日本 17 IIJ
-  - 🇯🇵 日本 19 NTT
-  - 🌐 国际网站
-  type: select
-- name: 🇭🇰 香港流量优先
-  proxies:
-  - 🇭🇰 香港 09 HKT（0.5倍率）
-  - 🇭🇰 香港 10 HKT（0.5倍率）
-  - 🇭🇰 香港 11 HKBN（0.5倍率）
-  - 🌐 国际网站
-  type: select
 rule-providers:
-  AsianMedia:
-    behavior: classical
-    interval: 86400
-    path: ./RuleSet/AsianMedia.yaml
-    type: http
-    url: https://resource.touhou.center/ios_rule_script/rule/Clash/AsianMedia/AsianMedia.yaml
-  China:
-    behavior: classical
-    interval: 86400
-    path: ./RuleSet/China.yaml
-    type: http
-    url: https://resource.touhou.center/ios_rule_script/rule/Clash/China/China_Classical.yaml
-  ChinaIPs:
-    behavior: classical
-    interval: 86400
-    path: ./RuleSet/ChinaIPs.yaml
-    type: http
-    url: https://resource.touhou.center/ios_rule_script/rule/Clash/ChinaIPs/ChinaIPs_Classical.yaml
-  ChinaMedia:
-    behavior: classical
-    interval: 86400
-    path: ./RuleSet/ChinaMedia.yaml
-    type: http
-    url: https://resource.touhou.center/ios_rule_script/rule/Clash/ChinaMedia/ChinaMedia.yaml
-  Direct:
-    behavior: classical
-    interval: 86400
-    path: ./RuleSet/Direct.yaml
-    type: http
-    url: https://resource.touhou.center/ios_rule_script/rule/Clash/Direct/Direct.yaml
-  Game:
-    behavior: classical
-    interval: 86400
-    path: ./RuleSet/Game.yaml
-    type: http
-    url: https://resource.touhou.center/ios_rule_script/rule/Clash/Game/Game.yaml
-  Global:
-    behavior: classical
-    interval: 86400
-    path: ./RuleSet/Global.yaml
-    type: http
-    url: https://resource.touhou.center/ios_rule_script/rule/Clash/Global/Global_Classical.yaml
-  GlobalMedia:
-    behavior: classical
-    interval: 86400
-    path: ./RuleSet/GlobalMedia.yaml
-    type: http
-    url: https://resource.touhou.center/ios_rule_script/rule/Clash/GlobalMedia/GlobalMedia_Classical.yaml
-  Lan:
-    behavior: classical
-    interval: 86400
-    path: ./RuleSet/Lan.yaml
-    type: http
-    url: https://resource.touhou.center/ios_rule_script/rule/Clash/Lan/Lan.yaml
   custom-rules:
-    behavior: classical
-    interval: 86400
-    path: ./rules/custom-rules.yaml
     type: http
+    behavior: classical
     url: https://raw.githubusercontent.com/tiger-git2022/Clash-Customize/main/custom-rules.yaml
+    path: ./rules/custom-rules.yaml
+    interval: 86400
 rules:
 - RULE-SET,custom-rules,🇯🇵 日本节点
-- RULE-SET,Direct,DIRECT
-- RULE-SET,Global,🇭🇰 香港流量优先
-- RULE-SET,AsianMedia,🎬 大陆流媒体国际版
-- RULE-SET,Game,🎮 游戏平台
-- RULE-SET,Global,🇭🇰 香港流量优先
-- RULE-SET,ChinaMedia,🎬 大陆流媒体
-- RULE-SET,China,🏠 大陆网站
-- RULE-SET,Lan,DIRECT
-- RULE-SET,ChinaIPs,🏠 大陆流量
-- MATCH,🚥 其他流量
-socks-port: 7891
