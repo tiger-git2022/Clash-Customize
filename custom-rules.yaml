@@ -1,8 +1,39 @@
-payload:
-  - DOMAIN-SUFFIX,dlsite.com
-  - DOMAIN-SUFFIX,dlsite.jp
-  - DOMAIN-SUFFIX,dmm.co.jp
-  - DOMAIN-SUFFIX,chatgpt.com
-  - DOMAIN-SUFFIX,openai.com
-  - DOMAIN-SUFFIX,aistudio.google.com.com
-  - DOMAIN-SUFFIX,amazon.co.jp
+japan-sites:
+  payload:
+    # 你已有的网站
+    - DOMAIN-SUFFIX,dlsite.com
+    - DOMAIN-SUFFIX,dlsite.jp
+    - DOMAIN-SUFFIX,dmm.co.jp
+    - DOMAIN-SUFFIX,amazon.co.jp
+
+    # 主流日本网站补全
+    - DOMAIN-SUFFIX,yahoo.co.jp
+    - DOMAIN-SUFFIX,google.co.jp
+    - DOMAIN-SUFFIX,rakuten.co.jp
+    - DOMAIN-SUFFIX,nicovideo.jp
+    - DOMAIN-SUFFIX,nhk.or.jp
+    - DOMAIN-SUFFIX,goo.ne.jp
+    - DOMAIN-SUFFIX,pixiv.net
+    - DOMAIN-SUFFIX,line.me
+    - DOMAIN-SUFFIX,livedoor.com
+    - DOMAIN-SUFFIX,cookpad.com
+    - DOMAIN-SUFFIX,hatenablog.com
+    - DOMAIN-SUFFIX,bookwalker.jp
+
+ai-sites:
+  payload:
+    # 你已有的 AI 网站
+    - DOMAIN-SUFFIX,chatgpt.com
+    - DOMAIN-SUFFIX,openai.com
+    - DOMAIN-SUFFIX,aistudio.google.com
+
+    # 主流 AI 网站补全
+    - DOMAIN-SUFFIX,anthropic.com
+    - DOMAIN-SUFFIX,claude.ai
+    - DOMAIN-SUFFIX,huggingface.co
+    - DOMAIN-SUFFIX,gemini.google.com
+    - DOMAIN-SUFFIX,poe.com
+    - DOMAIN-SUFFIX,replicate.com
+    - DOMAIN-SUFFIX,stability.ai
+    - DOMAIN-SUFFIX,midjourney.com
+    - DOMAIN-SUFFIX,runwayml.com
