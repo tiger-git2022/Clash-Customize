@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-# merge.py - generate output.yaml with custom groups always at front (both in proxy-groups list and inside each group)
-# Requires: requests, PyYAML
 
 import re
 import sys
@@ -17,6 +15,9 @@ OUTPUT_FILE = "output.yaml"
 HK_GROUP = "🇭🇰 香港节点"
 JP_GROUP = "🇯🇵 日本节点"
 TW_GROUP = "🇹🇼 台湾节点"
+
+AI_GROUP_NAME = "🤖 AI网站"
+FOREIGN_GROUP_NAME = "🌐 国外流量"
 
 # -------- 工具函数 --------
 def load_yaml(path):
@@ -43,11 +44,9 @@ template = load_yaml(TEMPLATE_FILE)
 nodes = sub_yaml.get("proxies", []) or []
 remote_groups = sub_yaml.get("proxy-groups", []) or []
 
-# 保留远程 rules 和 rule-providers
 remote_rules = sub_yaml.get("rules", []) or []
 remote_rule_providers = sub_yaml.get("rule-providers", {}) or {}
 
-# 本地 template 的 rules 和 rule-providers
 local_rules = template.get("rules", []) or []
 local_rule_providers = template.get("rule-providers", {}) or {}
 
@@ -58,7 +57,6 @@ hk_nodes = [p["name"] for p in nodes if "香港" in p.get("name", "")]
 jp_nodes = [p["name"] for p in nodes if "日本" in p.get("name", "")]
 tw_nodes = [p["name"] for p in nodes if "台湾" in p.get("name", "")]
 
-# -------- 倍率解析与排序 --------
 def parse_multiplier_from_name(name: str) -> float:
     if "0.5倍率" in name:
         return 0.5
@@ -77,14 +75,28 @@ hk_nodes = sort_nodes(hk_nodes)
 jp_nodes = sort_nodes(jp_nodes)
 tw_nodes = sort_nodes(tw_nodes)
 
-# -------- 自定义 select 组 --------
+# -------- 自定义节点组 --------
 custom_groups = [
     {"name": HK_GROUP, "type": "select", "proxies": hk_nodes},
     {"name": JP_GROUP, "type": "select", "proxies": jp_nodes},
     {"name": TW_GROUP, "type": "select", "proxies": tw_nodes},
 ]
 
-# -------- 替换远程组内地区节点（自定义节点组在 proxies 内始终最前） --------
+# -------- 创建 AI 节点组（复制国外流量节点组）--------
+foreign_group = None
+for g in remote_groups:
+    if isinstance(g, dict) and g.get("name") == FOREIGN_GROUP_NAME:
+        foreign_group = deepcopy(g)
+        break
+
+if not foreign_group:
+    print("Error: 找不到 '🌐 国外流量' 节点组，请检查你的订阅或名称")
+    sys.exit(1)
+
+foreign_group["name"] = AI_GROUP_NAME
+custom_groups.append(foreign_group)
+
+# -------- 替换远程组内容 --------
 def get_proxy_name(item):
     return item["name"] if isinstance(item, dict) else str(item)
 
@@ -115,7 +127,7 @@ for g in remote_groups:
     else:
         new_remote_groups.append(g)
 
-# -------- 合并 proxy-groups（自定义组在最前面）--------
+# -------- 合并组 --------
 final_groups = deepcopy(custom_groups)
 seen = set(cg["name"] for cg in custom_groups)
 
@@ -132,12 +144,11 @@ merged_rule_providers = deepcopy(local_rule_providers)
 merged_rule_providers.update(remote_rule_providers)
 
 # -------- 最终配置 --------
-final = deepcopy(template) if template else {}
+final = deepcopy(template)
 final["proxies"] = nodes
 final["proxy-groups"] = final_groups
 final["rules"] = local_rules + remote_rules
 final["rule-providers"] = merged_rule_providers
 
-# -------- 保存输出 --------
 save_yaml(OUTPUT_FILE, final)
 print("Saved ->", OUTPUT_FILE)
