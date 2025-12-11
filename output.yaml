@@ -689,11 +689,17 @@ proxy-groups:
   proxies:
   - DIRECT
 rule-providers:
-  custom-rules:
+  japan-sites:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/tiger-git2022/Clash-Customize/main/custom-rules.yaml
-    path: ./rules/custom-rules.yaml
+    path: ./rules/japan-sites.yaml
+    interval: 86400
+  ai-sites:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/tiger-git2022/Clash-Customize/main/custom-rules.yaml
+    path: ./rules/ai-sites.yaml
     interval: 86400
   Direct:
     type: http
@@ -750,7 +756,9 @@ rule-providers:
     url: https://resource.touhou.center/ios_rule_script/rule/Clash/ChinaIPs/ChinaIPs_Classical.yaml
     interval: 86400
 rules:
-- RULE-SET,custom-rules,🇯🇵 日本节点
+- RULE-SET,japan-sites,🇯🇵 日本节点
+- RULE-SET,ai-sites,🤖 AI网站
+- MATCH,🌐 国外流量
 - RULE-SET,Direct,DIRECT
 - RULE-SET,GlobalMedia,🎬 国际流媒体
 - RULE-SET,AsianMedia,🎬 大陆流媒体国际版
