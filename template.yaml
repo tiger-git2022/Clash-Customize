@@ -13,20 +13,26 @@ dns:
     - 1.1.1.1
     - 8.8.8.8
 
-# proxies: 会自动由 generate.js 注入机场节点
 proxies: []
 
-# 代理组：先注入机场原有的组，再插入我们自定义的组
 proxy-groups: []
 
-# 规则
 rule-providers:
-  custom-rules:
+  japan-sites:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/tiger-git2022/Clash-Customize/main/custom-rules.yaml
-    path: ./rules/custom-rules.yaml
+    path: ./rules/japan-sites.yaml
+    interval: 86400
+
+  ai-sites:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/tiger-git2022/Clash-Customize/main/custom-rules.yaml
+    path: ./rules/ai-sites.yaml
     interval: 86400
 
 rules:
-  - RULE-SET,custom-rules,🇯🇵 日本节点
+  - RULE-SET,japan-sites,🇯🇵 日本节点
+  - RULE-SET,ai-sites,🤖 AI网站
+  - MATCH,🌐 国外流量
