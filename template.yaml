@@ -35,4 +35,3 @@ rule-providers:
 rules:
   - RULE-SET,japan-sites,🇯🇵 日本节点
   - RULE-SET,ai-sites,🤖 AI网站
-  - MATCH,🌐 国外流量
