@@ -21,4 +21,4 @@ payload:
   - DOMAIN,oauth2.googleapis.com
   - DOMAIN,android.clients.google.com
   - DOMAIN,play.googleapis.com
-    - DOMAIN-SUFFIX,ai.google.dev
+  - DOMAIN-SUFFIX,ai.google.dev
