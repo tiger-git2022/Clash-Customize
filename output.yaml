@@ -3,10 +3,10 @@ socks-port: 7891
 mode: rule
 log-level: info
 allow-lan: true
+ipv6: false
 dns:
   enable: true
   enhanced-mode: fake-ip
-  ipv6: false
   nameserver:
   - 1.1.1.1
   - 8.8.8.8
