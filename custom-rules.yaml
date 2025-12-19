@@ -8,7 +8,6 @@ japan-sites:
 
     # 主流日本网站补全
     - DOMAIN-SUFFIX,yahoo.co.jp
-    - DOMAIN-SUFFIX,google.co.jp
     - DOMAIN-SUFFIX,rakuten.co.jp
     - DOMAIN-SUFFIX,nicovideo.jp
     - DOMAIN-SUFFIX,nhk.or.jp
