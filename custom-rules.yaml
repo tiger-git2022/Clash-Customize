@@ -37,3 +37,7 @@ ai-sites:
     - DOMAIN-SUFFIX,stability.ai
     - DOMAIN-SUFFIX,midjourney.com
     - DOMAIN-SUFFIX,runwayml.com
+    - DOMAIN-SUFFIX,googleapis.com
+    - DOMAIN-SUFFIX,google.com
+    - DOMAIN-SUFFIX,gstatic.com
+    - DOMAIN-SUFFIX,generativeai.google
