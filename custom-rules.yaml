@@ -13,7 +13,6 @@ japan-sites:
     - DOMAIN-SUFFIX,nhk.or.jp
     - DOMAIN-SUFFIX,goo.ne.jp
     - DOMAIN-SUFFIX,pixiv.net
-    - DOMAIN-SUFFIX,line.me
     - DOMAIN-SUFFIX,livedoor.com
     - DOMAIN-SUFFIX,cookpad.com
     - DOMAIN-SUFFIX,hatenablog.com
