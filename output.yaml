@@ -735,13 +735,13 @@ rule-providers:
   japan-sites:
     type: http
     behavior: classical
-    url: https://raw.githubusercontent.com/tiger-git2022/Clash-Customize/main/custom-rules.yaml
+    url: https://raw.githubusercontent.com/tiger-git2022/Clash-Customize/main/japan-sites.yaml
     path: ./rules/japan-sites.yaml
     interval: 86400
   ai-sites:
     type: http
     behavior: classical
-    url: https://raw.githubusercontent.com/tiger-git2022/Clash-Customize/main/custom-rules.yaml
+    url: https://raw.githubusercontent.com/tiger-git2022/Clash-Customize/main/ai-sites.yaml
     path: ./rules/ai-sites.yaml
     interval: 86400
   Direct:
