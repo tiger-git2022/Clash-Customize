@@ -41,7 +41,7 @@ ai-sites:
     - DOMAIN-SUFFIX,gstatic.com
     - DOMAIN-SUFFIX,generativeai.google
     - DOMAIN-SUFFIX,generativelanguage.googleapis.com
-    - DOMAIN-SUFFIX,oauth2.googleapis.com
-    - DOMAIN-SUFFIX,android.clients.google.com
-    - DOMAIN-SUFFIX,play.googleapis.com
+    - DOMAIN,oauth2.googleapis.com
+    - DOMAIN,android.clients.google.com
+    - DOMAIN,play.googleapis.com
     - DOMAIN-SUFFIX,ai.google.dev
