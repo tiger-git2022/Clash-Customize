@@ -6,6 +6,7 @@ allow-lan: true
 dns:
   enable: true
   enhanced-mode: fake-ip
+  ipv6: false
   nameserver:
   - 1.1.1.1
   - 8.8.8.8
