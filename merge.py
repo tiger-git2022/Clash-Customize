@@ -32,11 +32,32 @@ def save_yaml(path, data):
     with open(path, "w", encoding="utf-8") as f:
         yaml.safe_dump(data, f, allow_unicode=True, sort_keys=False)
 
-# -------- 下载订阅 --------
+# -------- 下载订阅 (带自动重试机制) --------
 print("Downloading subscription from:", SUB_URL)
-resp = requests.get(SUB_URL, timeout=20)
-resp.raise_for_status()
-sub_yaml = yaml.safe_load(resp.text)
+
+def get_session_with_retries():
+    session = requests.Session()
+    # total: 总重试次数
+    # backoff_factor: 重试间隔，计算公式为 {backoff factor} * (2 ** ({number of total retries} - 1))
+    # status_forcelist: 遇到这些状态码时触发重试
+    retries = Retry(
+        total=5, 
+        backoff_factor=1, 
+        status_forcelist=[500, 502, 503, 504],
+        raise_on_status=True
+    )
+    session.mount('https://', HTTPAdapter(max_retries=retries))
+    session.mount('http://', HTTPAdapter(max_retries=retries))
+    return session
+
+try:
+    session = get_session_with_retries()
+    resp = session.get(SUB_URL, timeout=30) # 稍微增加一点超时时间
+    resp.raise_for_status()
+    sub_yaml = yaml.safe_load(resp.text)
+except Exception as e:
+    print(f"Error downloading subscription after retries: {e}")
+    sys.exit(1)
 
 # -------- 读取 template --------
 template = load_yaml(TEMPLATE_FILE)
