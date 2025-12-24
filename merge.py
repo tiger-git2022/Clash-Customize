@@ -5,6 +5,8 @@ import sys
 import requests
 import yaml
 from copy import deepcopy
+from requests.adapters import HTTPAdapter
+from urllib3.util import Retry
 
 # -------- 配置 --------
 SUB_URL = "https://api.touhou.center/sub/bd44806c62afd82b/clash"
