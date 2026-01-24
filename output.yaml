@@ -158,13 +158,6 @@ proxies:
   password: ucgTewGY5z1AHqS3Ht6e+/dHORlKeI5W4mXeyAcsUXY=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
   cipher: 2022-blake3-aes-256-gcm
   udp: true
-- name: 🇦🇺 澳大利亚 01 Akamai IPv6
-  type: ss
-  server: 906a315b-ee8a-4080-b9d7-d9321c618611.hk.node.touhou.earth
-  port: 8602
-  password: ve3VqbnJJwpfdcUU+fKmdd66LN+9JEBz1uSj7fel5vs=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
-  cipher: 2022-blake3-aes-256-gcm
-  udp: true
 - name: 🇺🇸 美国 01 BGP IPv6
   type: ss
   server: 8da27279-fdbb-46d1-bfcc-02585bbd8931.jp.node.touhou.earth
@@ -328,7 +321,6 @@ proxy-groups:
   - 🇯🇵 日本 15 IIJ
   - 🇯🇵 日本 17 IIJ
   - 🇯🇵 日本 19 NTT
-  - 🇦🇺 澳大利亚 01 Akamai IPv6
   - 🇺🇸 美国 01 BGP IPv6
   - 🇺🇸 美国 03 4837
   - 🇺🇸 美国 05 BGP IPv6（流媒体）
@@ -371,7 +363,6 @@ proxy-groups:
   - 🇯🇵 日本 15 IIJ
   - 🇯🇵 日本 17 IIJ
   - 🇯🇵 日本 19 NTT
-  - 🇦🇺 澳大利亚 01 Akamai IPv6
   - 🇺🇸 美国 01 BGP IPv6
   - 🇺🇸 美国 03 4837
   - 🇺🇸 美国 05 BGP IPv6（流媒体）
@@ -418,7 +409,6 @@ proxy-groups:
   - 🇯🇵 日本 15 IIJ
   - 🇯🇵 日本 17 IIJ
   - 🇯🇵 日本 19 NTT
-  - 🇦🇺 澳大利亚 01 Akamai IPv6
   - 🇺🇸 美国 01 BGP IPv6
   - 🇺🇸 美国 03 4837
   - 🇺🇸 美国 05 BGP IPv6（流媒体）
@@ -460,7 +450,6 @@ proxy-groups:
   - 🇯🇵 日本 15 IIJ
   - 🇯🇵 日本 17 IIJ
   - 🇯🇵 日本 19 NTT
-  - 🇦🇺 澳大利亚 01 Akamai IPv6
   - 🇺🇸 美国 01 BGP IPv6
   - 🇺🇸 美国 03 4837
   - 🇺🇸 美国 05 BGP IPv6（流媒体）
@@ -502,7 +491,6 @@ proxy-groups:
   - 🇯🇵 日本 15 IIJ
   - 🇯🇵 日本 17 IIJ
   - 🇯🇵 日本 19 NTT
-  - 🇦🇺 澳大利亚 01 Akamai IPv6
   - 🇺🇸 美国 01 BGP IPv6
   - 🇺🇸 美国 03 4837
   - 🇺🇸 美国 05 BGP IPv6（流媒体）
@@ -544,7 +532,6 @@ proxy-groups:
   - 🇯🇵 日本 15 IIJ
   - 🇯🇵 日本 17 IIJ
   - 🇯🇵 日本 19 NTT
-  - 🇦🇺 澳大利亚 01 Akamai IPv6
   - 🇺🇸 美国 01 BGP IPv6
   - 🇺🇸 美国 03 4837
   - 🇺🇸 美国 05 BGP IPv6（流媒体）
@@ -586,7 +573,6 @@ proxy-groups:
   - 🇯🇵 日本 15 IIJ
   - 🇯🇵 日本 17 IIJ
   - 🇯🇵 日本 19 NTT
-  - 🇦🇺 澳大利亚 01 Akamai IPv6
   - 🇺🇸 美国 01 BGP IPv6
   - 🇺🇸 美国 03 4837
   - 🇺🇸 美国 05 BGP IPv6（流媒体）
@@ -628,7 +614,6 @@ proxy-groups:
   - 🇯🇵 日本 15 IIJ
   - 🇯🇵 日本 17 IIJ
   - 🇯🇵 日本 19 NTT
-  - 🇦🇺 澳大利亚 01 Akamai IPv6
   - 🇺🇸 美国 01 BGP IPv6
   - 🇺🇸 美国 03 4837
   - 🇺🇸 美国 05 BGP IPv6（流媒体）
@@ -670,7 +655,6 @@ proxy-groups:
   - 🇯🇵 日本 15 IIJ
   - 🇯🇵 日本 17 IIJ
   - 🇯🇵 日本 19 NTT
-  - 🇦🇺 澳大利亚 01 Akamai IPv6
   - 🇺🇸 美国 01 BGP IPv6
   - 🇺🇸 美国 03 4837
   - 🇺🇸 美国 05 BGP IPv6（流媒体）
@@ -712,7 +696,6 @@ proxy-groups:
   - 🇯🇵 日本 15 IIJ
   - 🇯🇵 日本 17 IIJ
   - 🇯🇵 日本 19 NTT
-  - 🇦🇺 澳大利亚 01 Akamai IPv6
   - 🇺🇸 美国 01 BGP IPv6
   - 🇺🇸 美国 03 4837
   - 🇺🇸 美国 05 BGP IPv6（流媒体）
