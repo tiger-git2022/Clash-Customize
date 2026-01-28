@@ -95,13 +95,6 @@ proxies:
   password: 9L99icrQsQ5H78XfXtqYIqgRDY/8ex/IpvkFfVYiquk=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
   cipher: 2022-blake3-aes-256-gcm
   udp: true
-- name: 🇯🇵 日本 05 Akamai IPv6
-  type: ss
-  server: 8da27279-fdbb-46d1-bfcc-02585bbd8931.jp.node.touhou.earth
-  port: 8201
-  password: 2VI6Z5HnLiCKUV4HgPp5tAphjOD9cor5gsWBlnjwDzw=:NjQ1MzM4NTUwOTJlY2YzZjc3MjZiMWEyOWI0YjRjNDk=
-  cipher: 2022-blake3-aes-256-gcm
-  udp: true
 - name: 🇯🇵 日本 06 BGP IPv6（流媒体）
   type: ss
   server: 4083f527-5574-40ba-9e63-bcc3919436c0.jp.node.touhou.earth
@@ -278,7 +271,6 @@ proxy-groups:
 - name: 🇯🇵 日本节点
   type: select
   proxies:
-  - 🇯🇵 日本 05 Akamai IPv6
   - 🇯🇵 日本 06 BGP IPv6（流媒体）
   - 🇯🇵 日本 07 IIJ
   - 🇯🇵 日本 09 IIJ
@@ -312,7 +304,6 @@ proxy-groups:
   - 🇸🇬 新加坡 02 BGP IPv6
   - 🇯🇵 日本 01 电信/沪日专线（3倍率）
   - 🇯🇵 日本 02 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 05 Akamai IPv6
   - 🇯🇵 日本 06 BGP IPv6（流媒体）
   - 🇯🇵 日本 07 IIJ
   - 🇯🇵 日本 09 IIJ
@@ -354,7 +345,6 @@ proxy-groups:
   - 🇸🇬 新加坡 01 BGP IPv6（流媒体）
   - 🇸🇬 新加坡 02 BGP IPv6
   - 🇯🇵 日本 02 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 05 Akamai IPv6
   - 🇯🇵 日本 06 BGP IPv6（流媒体）
   - 🇯🇵 日本 07 IIJ
   - 🇯🇵 日本 09 IIJ
@@ -400,7 +390,6 @@ proxy-groups:
   - 🇸🇬 新加坡 01 BGP IPv6（流媒体）
   - 🇸🇬 新加坡 02 BGP IPv6
   - 🇯🇵 日本 02 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 05 Akamai IPv6
   - 🇯🇵 日本 06 BGP IPv6（流媒体）
   - 🇯🇵 日本 07 IIJ
   - 🇯🇵 日本 09 IIJ
@@ -441,7 +430,6 @@ proxy-groups:
   - 🇸🇬 新加坡 01 BGP IPv6（流媒体）
   - 🇸🇬 新加坡 02 BGP IPv6
   - 🇯🇵 日本 02 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 05 Akamai IPv6
   - 🇯🇵 日本 06 BGP IPv6（流媒体）
   - 🇯🇵 日本 07 IIJ
   - 🇯🇵 日本 09 IIJ
@@ -482,7 +470,6 @@ proxy-groups:
   - 🇸🇬 新加坡 01 BGP IPv6（流媒体）
   - 🇸🇬 新加坡 02 BGP IPv6
   - 🇯🇵 日本 02 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 05 Akamai IPv6
   - 🇯🇵 日本 06 BGP IPv6（流媒体）
   - 🇯🇵 日本 07 IIJ
   - 🇯🇵 日本 09 IIJ
@@ -523,7 +510,6 @@ proxy-groups:
   - 🇸🇬 新加坡 01 BGP IPv6（流媒体）
   - 🇸🇬 新加坡 02 BGP IPv6
   - 🇯🇵 日本 02 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 05 Akamai IPv6
   - 🇯🇵 日本 06 BGP IPv6（流媒体）
   - 🇯🇵 日本 07 IIJ
   - 🇯🇵 日本 09 IIJ
@@ -564,7 +550,6 @@ proxy-groups:
   - 🇸🇬 新加坡 01 BGP IPv6（流媒体）
   - 🇸🇬 新加坡 02 BGP IPv6
   - 🇯🇵 日本 02 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 05 Akamai IPv6
   - 🇯🇵 日本 06 BGP IPv6（流媒体）
   - 🇯🇵 日本 07 IIJ
   - 🇯🇵 日本 09 IIJ
@@ -605,7 +590,6 @@ proxy-groups:
   - 🇸🇬 新加坡 01 BGP IPv6（流媒体）
   - 🇸🇬 新加坡 02 BGP IPv6
   - 🇯🇵 日本 02 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 05 Akamai IPv6
   - 🇯🇵 日本 06 BGP IPv6（流媒体）
   - 🇯🇵 日本 07 IIJ
   - 🇯🇵 日本 09 IIJ
@@ -646,7 +630,6 @@ proxy-groups:
   - 🇸🇬 新加坡 01 BGP IPv6（流媒体）
   - 🇸🇬 新加坡 02 BGP IPv6
   - 🇯🇵 日本 02 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 05 Akamai IPv6
   - 🇯🇵 日本 06 BGP IPv6（流媒体）
   - 🇯🇵 日本 07 IIJ
   - 🇯🇵 日本 09 IIJ
@@ -687,7 +670,6 @@ proxy-groups:
   - 🇸🇬 新加坡 01 BGP IPv6（流媒体）
   - 🇸🇬 新加坡 02 BGP IPv6
   - 🇯🇵 日本 02 电信/沪日专线（3倍率）
-  - 🇯🇵 日本 05 Akamai IPv6
   - 🇯🇵 日本 06 BGP IPv6（流媒体）
   - 🇯🇵 日本 07 IIJ
   - 🇯🇵 日本 09 IIJ
